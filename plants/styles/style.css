@@ -78,5 +78,22 @@ header {
 .nav-list li a:hover::after {
   color: #E06733;
   transform: scale(1);
- 
+}
+.welcome{
+  height: 532px;
+  background-color: #EDF2EC;
+  
+}
+.welcome-content{
+  display: flex;
+  justify-content: space-around;
+  padding: 62px 109px;
+}
+.welcome-leafs{
+  width: 448px;
+  height: 407px;
+  background-image: url("../assets/img/leafs.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
