@@ -212,13 +212,13 @@ h2,
   line-height: 26px;
   color: #e06733;
 }
-.service-btn:hover{
+.service-btn:hover {
   background-color: #e06733;
   color: white;
   transition: all 0.3s ease;
   cursor: pointer;
 }
-.service-image{
+.service-image {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 116px;
@@ -228,7 +228,7 @@ h2,
   width: 330px;
   height: 450px;
 }
-.service-img{
+.service-img {
   width: 329px;
   height: 350px;
 }
@@ -254,4 +254,189 @@ h3 {
   font-size: 16px;
   line-height: 20px;
   color: #717171;
+}
+
+/* prices */
+.prices {
+  background-color: white;
+}
+.prices-content {
+  padding: 40px 109px 115px;
+  display: flex;
+  justify-content: space-between;
+}
+.prices-items {
+  width: 332px;
+}
+.prices-mainTitle {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  color: #000000;
+}
+.prices-itemsContainer {
+  width: 332px;
+  height: auto;
+  border: 1px solid #e3e1d5;
+  border-radius: 20px;
+  padding: 34px 41px;
+}
+.prices-itemsContainer .details-container:not(:last-child){
+  margin-bottom: 32px;
+}
+details[open] .prices-itemsContainer {
+  height: 430px;
+}
+.prices-itemsContainer .details-container details[open] {
+  margin-bottom: 130px;
+}
+details {
+  width: 250px;
+  height: 50px;
+  background: #edf2ec;
+  border-radius: 20px;
+}
+summary,
+.open {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  padding-top: 15px;
+}
+.summary-title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: #000000;
+  width: 100px;
+}
+.arrow-down {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: #d9d9d9;
+  border-radius: 50%;
+  background-image: url("../assets/img/arrowdown.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+details[open] {
+  background: #d6e7d2;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+details[open] > summary .summary-open {
+  transition: all 0.4s ease;
+}
+details[open] > summary .summary-title {
+  margin-bottom: 12px;
+  transition: all 0.4s ease;
+}
+details[open] > summary .arrow-down {
+  transform: rotate(-180deg);
+  background-color: #aea1a1;
+  margin-bottom: 12px;
+  fill: white;
+  transition: all 0.4s ease;
+}
+
+.summary-open {
+  width: 250px;
+  height: 114px;
+  padding: 0px 40px;
+  background: #d6e7d2;
+  border-radius: 20px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+.line {
+  width: 164px;
+  height: 0px;
+  border: 0.5px solid #aea1a1;
+  margin-bottom: 6px;
+}
+.summary-text {
+  font-family: "Inter";
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 10px;
+  color: #717171;
+  margin-bottom: 6px;
+}
+.summary-price,
+.summary-forPrice {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 20px;
+  color: #e06733;
+  margin-bottom: 12px;
+}
+.summary-forPrice {
+  font-weight: 400;
+  color: black;
+}
+.summary-btn {
+  width: 86px;
+  height: 25px;
+  background: #ffffff;
+  border-radius: 10px;
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #717171;
+  border: none;
+}
+.prices-info {
+  width: 452px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.prices-title,
+.prices-intitle {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  text-align: right;
+  color: #000000;
+  margin-bottom: 38px;
+}
+.prices-intitle {
+  color: #499a18;
+}
+.prices-btn {
+  width: 162px;
+  height: 50px;
+  border: 1px solid #e06733;
+  border-radius: 5px;
+  font-family: "Inika";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  color: #e06733;
+  background-color: transparent;
+  margin-bottom: 39px;
+}
+.prices-btn:hover {
+  background-color: #e06733;
+  color: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.prices-leafs {
+  width: 152px;
+  height: 175px;
+  background-image: url("../assets/img/smallLeafs.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
