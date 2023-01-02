@@ -11,7 +11,6 @@ html {
 } */
 .container {
   width: 1440px;
-  padding: 0 15px;
   margin: 0 auto;
 }
 ul,
@@ -282,7 +281,7 @@ h3 {
   border-radius: 20px;
   padding: 34px 41px;
 }
-.prices-itemsContainer .details-container:not(:last-child){
+.prices-itemsContainer .details-container:not(:last-child) {
   margin-bottom: 32px;
 }
 details[open] .prices-itemsContainer {
@@ -439,4 +438,132 @@ details[open] > summary .arrow-down {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.contacts {
+  background-color: #edf2ec;
+}
+.contacts-content {
+  padding: 53px 109px 0px;
+  display: flex;
+}
+.contacts-women {
+  display: flex;
+  margin-right: 64px;
+}
+.contacts-womenImage {
+  width: 400px;
+  height: 497px;
+  background-image: url("../assets/img/contact_woman.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
+  margin-right: 95px;
+}
+h2.contacts-title {
+  font-weight: 700;
+  line-height: 52px;
+}
+.dropdown {
+  margin-top: 95px;
+  padding: 5px 19px;
+  position: relative;
+  width: 450px;
+  height: 50px;
+  background: #d6e7d2;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px;
+}
+
+.dropdown-list {
+  display: none;
+  position: absolute;
+  z-index: 5;
+}
+.dropdown-city {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 0.05em;
+  color: #717171;
+  text-align: left;
+}
+.dropdown-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dropdown:hover {
+  cursor: pointer;
+  background-color: #c1e698;
+  transition: all 0.3s ease-in;
+}
+.dropdown-arrow {
+  width: 16px;
+  height: 16px;
+  background-color: #aea1a1;
+  border-radius: 50%;
+  background-image: url("../assets/img/arrowdowncity.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+}
+.dropdown-arrow:hover {
+  background-color: #8ba07e;
+  transform: rotate(-180deg);
+  transition: all 0.3s ease-in;
+}
+footer {
+  background-color: #ffffff;
+}
+.footer-content {
+  padding: 40px 109px;
+  display: flex;
+  justify-content: space-between;
+}
+.github,
+.school-name,
+.my-git{
+  font-family: 'Inter';
+font-weight: 400;
+font-size: 20px;
+line-height: 50px;
+color: #000000;
+}
+.my-git{
+  text-decoration: none;
+}
+.social-media-links{
+  display: flex;
+  justify-content: space-around;
+}
+.social-media-links li:not(:last-child){
+  margin-right: 20px;
+}
+.ico {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.ico.ico-inst {
+  background-image: url("../assets/img/inst\ 1.svg");
+}
+.ico.ico-facebook {
+  background-image: url("../assets/img/fb\ 1.svg");
+}
+.ico.ico-twitter {
+  background-image: url("../assets/img/tw\ 1.svg");
+}
+.ico.ico-pinterest {
+  background-image: url("../assets/img/pinterest\ 1.svg");
 }
