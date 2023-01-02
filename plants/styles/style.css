@@ -9,7 +9,7 @@ html {
 /* body {
   width: 100%;
 } */
-.container{
+.container {
   width: 1440px;
   padding: 0 15px;
   margin: 0 auto;
@@ -48,13 +48,12 @@ header {
   color: #010201;
   white-space: nowrap;
   position: relative;
-  
 }
-.nav-list .nav-item:not(:last-child){
+.nav-list .nav-item:not(:last-child) {
   margin-right: 46px;
 }
 
-.nav-list li a::after{
+.nav-list li a::after {
   content: attr(data-title);
   position: absolute;
   top: 0;
@@ -73,27 +72,186 @@ header {
 }
 .nav-list li a:hover {
   color: transparent;
-  
 }
 .nav-list li a:hover::after {
-  color: #E06733;
+  color: #e06733;
   transform: scale(1);
 }
-.welcome{
+.welcome {
   height: 532px;
-  background-color: #EDF2EC;
-  
+  background-color: #edf2ec;
 }
-.welcome-content{
+.welcome-content {
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   padding: 62px 109px;
 }
-.welcome-leafs{
-  width: 448px;
-  height: 407px;
+.welcome-leafs {
+  margin-right: 200px;
+  /* margin-right: 224px; */
+}
+.leafs {
   background-image: url("../assets/img/leafs.png");
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: top;
+  width: 448px;
+  height: 407px;
+}
+h1,
+.welcome-title {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 50px;
+  color: #717171;
+}
+h1 {
+  margin-bottom: 42px;
+}
+.welcome-title {
+  color: #499a18;
+}
+.welcome-text {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 35px;
+  color: #636060;
+  margin-bottom: 48px;
+}
+.welcome-btn {
+  width: 158px;
+  height: 44px;
+  border: 2px solid #e06733;
+  border-radius: 10px;
+  background-color: transparent;
+  font-family: "Inter";
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #000000;
+  text-transform: uppercase;
+}
+.welcome-btn:hover {
+  background-color: #e06733;
+  color: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* about */
+.about {
+  background-color: white;
+}
+.about-content {
+  display: flex;
+  padding: 93px 109px;
+}
+.about-info {
+  padding-top: 70px;
+  margin-right: 153px;
+}
+h2,
+.about-mainTitle,
+.about-title {
+  font-family: "Inika";
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 52px;
+  color: #499a18;
+  margin-bottom: 40px;
+}
+.about-title {
+  color: #e06733;
+}
+.about-text {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #636060;
+}
+.houseplant {
+  width: 464px;
+  height: 479px;
+  background-image: url("../assets/img/houseplant.png");
+  background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
+}
+
+/* service */
+.service {
+  background-color: #edf2ec;
+}
+.service-content {
+  padding: 40px 109px 121px;
+}
+.service-info {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 90px;
+}
+.service-title {
+  width: 306px;
+  margin-right: 142px;
+}
+.service-tabs .service-btn:not(:last-child) {
+  margin-right: 38px;
+}
+.service-btn {
+  width: 161px;
+  height: 50px;
+  border: 1px solid #e06733;
+  border-radius: 5px;
+  background-color: transparent;
+  font-family: "Inika";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  color: #e06733;
+}
+.service-btn:hover{
+  background-color: #e06733;
+  color: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.service-image{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 116px;
+  row-gap: 55px;
+}
+.service-item {
+  width: 330px;
+  height: 450px;
+}
+.service-img{
+  width: 329px;
+  height: 350px;
+}
+.service-description {
+  margin-top: -4px;
+  border: 1px solid #e3e1d5;
+  border-radius: 0px 0px 20px 20px;
+  text-align: center;
+  height: 100px;
+  padding: 10px 29px 36px;
+}
+h3 {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: #e06733;
+  margin-bottom: 10px;
+}
+.service-text {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #717171;
 }
