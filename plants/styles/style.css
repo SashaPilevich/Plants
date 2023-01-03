@@ -6,9 +6,13 @@
 html {
   scroll-behavior: smooth;
 }
-/* body {
-  width: 100%;
-} */
+body {
+  font-family: "Inika";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  color: #000000;
+}
 .container {
   width: 1440px;
   margin: 0 auto;
@@ -17,7 +21,6 @@ ul,
 li {
   list-style-type: none;
 }
-
 a {
   text-decoration: none;
 }
@@ -39,10 +42,6 @@ header {
   margin-right: 109px;
 }
 .nav-list li a {
-  font-family: "Inika";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
   line-height: 50px;
   color: #010201;
   white-space: nowrap;
@@ -51,7 +50,6 @@ header {
 .nav-list .nav-item:not(:last-child) {
   margin-right: 46px;
 }
-
 .nav-list li a::after {
   content: attr(data-title);
   position: absolute;
@@ -65,7 +63,7 @@ header {
   align-items: center;
   color: transparent;
   font-weight: 700;
-  transition: 0.24s;
+  transition: 0.3s;
   transform: scale(0.9);
   transform-origin: center center;
 }
@@ -82,12 +80,10 @@ header {
 }
 .welcome-content {
   display: flex;
-  /* justify-content: space-around; */
   padding: 62px 109px;
 }
 .welcome-leafs {
   margin-right: 200px;
-  /* margin-right: 224px; */
 }
 .leafs {
   background-image: url("../assets/img/leafs.png");
@@ -113,7 +109,6 @@ h1 {
 }
 .welcome-text {
   font-family: "Inter";
-  font-weight: 400;
   font-size: 20px;
   line-height: 35px;
   color: #636060;
@@ -129,7 +124,6 @@ h1 {
   font-size: 16px;
   line-height: 20px;
   text-align: center;
-  color: #000000;
   text-transform: uppercase;
 }
 .welcome-btn:hover {
@@ -138,8 +132,6 @@ h1 {
   transition: all 0.3s ease;
   cursor: pointer;
 }
-
-/* about */
 .about {
   background-color: white;
 }
@@ -154,7 +146,6 @@ h1 {
 h2,
 .about-mainTitle,
 .about-title {
-  font-family: "Inika";
   font-size: 40px;
   font-weight: 400;
   line-height: 52px;
@@ -166,7 +157,6 @@ h2,
 }
 .about-text {
   font-family: "Inter";
-  font-weight: 400;
   font-size: 20px;
   line-height: 30px;
   color: #636060;
@@ -180,7 +170,6 @@ h2,
   background-size: cover;
 }
 
-/* service */
 .service {
   background-color: #edf2ec;
 }
@@ -190,6 +179,8 @@ h2,
 .service-info {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
+  height: 94px;
   margin-bottom: 90px;
 }
 .service-title {
@@ -249,13 +240,10 @@ h3 {
 }
 .service-text {
   font-family: "Inter";
-  font-weight: 400;
-  font-size: 16px;
   line-height: 20px;
   color: #717171;
 }
 
-/* prices */
 .prices {
   background-color: white;
 }
@@ -296,24 +284,25 @@ details {
   background: #edf2ec;
   border-radius: 20px;
 }
-summary,
-.open {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
-  padding-top: 15px;
-}
-.summary-title {
+
+summary {
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
   line-height: 20px;
   color: #000000;
-  width: 100px;
+  padding-left: 40px;
+  list-style: none;
+  padding-top: 15px;
+  position: relative;
 }
-.arrow-down {
+summary::after {
+  content: "";
+  clear: both;
+  position: absolute;
+  top: 18px;
+  right: 40px;
   display: block;
   width: 16px;
   height: 16px;
@@ -323,6 +312,7 @@ summary,
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  cursor: pointer;
 }
 details[open] {
   background: #d6e7d2;
@@ -332,18 +322,16 @@ details[open] {
 details[open] > summary .summary-open {
   transition: all 0.4s ease;
 }
-details[open] > summary .summary-title {
+details[open] > summary {
   margin-bottom: 12px;
   transition: all 0.4s ease;
 }
-details[open] > summary .arrow-down {
+details[open] > summary::after {
   transform: rotate(-180deg);
   background-color: #aea1a1;
   margin-bottom: 12px;
-  fill: white;
   transition: all 0.4s ease;
 }
-
 .summary-open {
   width: 250px;
   height: 114px;
@@ -391,6 +379,7 @@ details[open] > summary .arrow-down {
   line-height: 20px;
   color: #717171;
   border: none;
+  cursor: pointer;
 }
 .prices-info {
   width: 452px;
@@ -439,7 +428,6 @@ details[open] > summary .arrow-down {
   background-size: cover;
   background-position: center;
 }
-
 .contacts {
   background-color: #edf2ec;
 }
@@ -474,7 +462,6 @@ h2.contacts-title {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px;
 }
-
 .dropdown-list {
   display: none;
   position: absolute;
@@ -485,7 +472,6 @@ h2.contacts-title {
   border: none;
   background-color: transparent;
   font-family: "Inter";
-  font-weight: 400;
   font-size: 20px;
   line-height: 40px;
   letter-spacing: 0.05em;
@@ -529,21 +515,21 @@ footer {
 }
 .github,
 .school-name,
-.my-git{
-  font-family: 'Inter';
-font-weight: 400;
-font-size: 20px;
-line-height: 50px;
-color: #000000;
+.my-git {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 50px;
+  color: #000000;
 }
-.my-git{
+.my-git {
   text-decoration: none;
 }
-.social-media-links{
+.social-media-links {
   display: flex;
   justify-content: space-around;
 }
-.social-media-links li:not(:last-child){
+.social-media-links li:not(:last-child) {
   margin-right: 20px;
 }
 .ico {
@@ -554,6 +540,10 @@ color: #000000;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+}
+.ico:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in;
 }
 .ico.ico-inst {
   background-image: url("../assets/img/inst\ 1.svg");
