@@ -27,6 +27,10 @@ a {
 header {
   background-color: #edf2ec;
 }
+.logo{
+  margin-right: 1px;
+  margin-bottom: 7px;
+}
 .header-nav {
   display: flex;
   justify-content: space-between;
@@ -35,11 +39,11 @@ header {
 }
 .logo-wrapper {
   display: flex;
-  margin-left: 111px;
+  margin-left: 92px;
 }
 .nav-list {
   display: flex;
-  margin-right: 109px;
+  margin-right: 132px;
 }
 .nav-list li a {
   line-height: 50px;
@@ -80,10 +84,10 @@ header {
 }
 .welcome-content {
   display: flex;
-  padding: 62px 109px;
+  padding: 62px 109px 62px 85px;
 }
 .welcome-leafs {
-  margin-right: 200px;
+  margin-right: 230px;
 }
 .leafs {
   background-image: url("../assets/img/leafs.png");
@@ -92,6 +96,9 @@ header {
   background-position: top;
   width: 448px;
   height: 407px;
+}
+.welcome-info{
+  padding-top: 38px;
 }
 h1,
 .welcome-title {
@@ -137,11 +144,11 @@ h1 {
 }
 .about-content {
   display: flex;
-  padding: 93px 109px;
+  padding: 93px 109px 93px 105px;
 }
 .about-info {
   padding-top: 70px;
-  margin-right: 153px;
+  margin-right: 163px;
 }
 h2,
 .about-mainTitle,
@@ -179,7 +186,6 @@ h2,
 .service-info {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
   height: 94px;
   margin-bottom: 90px;
 }
@@ -187,8 +193,11 @@ h2,
   width: 306px;
   margin-right: 142px;
 }
+.service-tabs{
+  padding-top: 28px;
+}
 .service-tabs .service-btn:not(:last-child) {
-  margin-right: 38px;
+  margin-right: 34px;
 }
 .service-btn {
   width: 161px;
@@ -255,12 +264,14 @@ h3 {
 .prices-items {
   width: 332px;
 }
-.prices-mainTitle {
+h2.prices-mainTitle {
   font-family: "Inter";
   font-weight: 700;
   font-size: 40px;
   line-height: 48px;
   color: #000000;
+  margin-bottom: 60px;
+
 }
 .prices-itemsContainer {
   width: 332px;
@@ -446,11 +457,12 @@ details[open] > summary::after {
   background-repeat: no-repeat;
   background-position: left;
   background-size: cover;
-  margin-right: 95px;
+  margin-right: 115px;
 }
 h2.contacts-title {
   font-weight: 700;
   line-height: 52px;
+  padding-top: 10px;
 }
 .dropdown {
   margin-top: 95px;
@@ -499,6 +511,7 @@ h2.contacts-title {
   background-position: center;
   border: none;
   cursor: pointer;
+  margin-right: 15px;
 }
 .dropdown-arrow:hover {
   background-color: #8ba07e;
@@ -512,7 +525,13 @@ footer {
   padding: 40px 109px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
+.footer-info{
+  display: flex;
+}
+.copy,
+.year,
 .github,
 .school-name,
 .my-git {
@@ -521,6 +540,10 @@ footer {
   font-size: 20px;
   line-height: 50px;
   color: #000000;
+}
+.copy,
+.year{
+  margin-right: 20px;
 }
 .my-git {
   text-decoration: none;
