@@ -14,7 +14,7 @@ body {
   color: #000000;
 }
 .container {
-  width: 1440px;
+  width: 1222px;
   margin: 0 auto;
 }
 ul,
@@ -39,11 +39,13 @@ header {
 }
 .logo-wrapper {
   display: flex;
-  margin-left: 92px;
+  align-items: center;
+}
+.nav{
+  margin-right: 5px;
 }
 .nav-list {
   display: flex;
-  margin-right: 132px;
 }
 .nav-list li a {
   line-height: 50px;
@@ -84,10 +86,10 @@ header {
 }
 .welcome-content {
   display: flex;
-  padding: 62px 109px 62px 85px;
+  padding: 62px 0px;
 }
 .welcome-leafs {
-  margin-right: 230px;
+  margin-right: 224px;
 }
 .leafs {
   background-image: url("../assets/img/leafs.png");
@@ -144,10 +146,10 @@ h1 {
 }
 .about-content {
   display: flex;
-  padding: 93px 109px 93px 105px;
+  padding: 93px 0px;
 }
 .about-info {
-  padding-top: 70px;
+  padding-top: 65px;
   margin-right: 163px;
 }
 h2,
@@ -181,7 +183,7 @@ h2,
   background-color: #edf2ec;
 }
 .service-content {
-  padding: 40px 109px 121px;
+  padding: 40px 0px 121px;
 }
 .service-info {
   display: flex;
@@ -237,7 +239,7 @@ h2,
   border-radius: 0px 0px 20px 20px;
   text-align: center;
   height: 100px;
-  padding: 10px 29px 36px;
+  padding: 8px 29px 36px;
 }
 h3 {
   font-family: "Inter";
@@ -245,7 +247,7 @@ h3 {
   font-size: 20px;
   line-height: 20px;
   color: #e06733;
-  margin-bottom: 10px;
+  margin-bottom: 13px;
 }
 .service-text {
   font-family: "Inter";
@@ -257,7 +259,7 @@ h3 {
   background-color: white;
 }
 .prices-content {
-  padding: 40px 109px 115px;
+  padding: 40px 0px 115px;
   display: flex;
   justify-content: space-between;
 }
@@ -443,7 +445,7 @@ details[open] > summary::after {
   background-color: #edf2ec;
 }
 .contacts-content {
-  padding: 53px 109px 0px;
+  padding-top: 53px;
   display: flex;
 }
 .contacts-women {
@@ -466,7 +468,7 @@ h2.contacts-title {
 }
 .dropdown {
   margin-top: 95px;
-  padding: 5px 19px;
+  padding: 5px 21px;
   position: relative;
   width: 450px;
   height: 50px;
@@ -522,7 +524,7 @@ footer {
   background-color: #ffffff;
 }
 .footer-content {
-  padding: 40px 109px;
+  padding: 40px 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -547,6 +549,9 @@ footer {
 }
 .my-git {
   text-decoration: none;
+}
+.github{
+  margin-left: 18px;
 }
 .social-media-links {
   display: flex;
