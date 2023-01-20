@@ -16,6 +16,7 @@ body {
 .container {
   width: 1222px;
   margin: 0 auto;
+  /* padding: 0px 109px; */
 }
 ul,
 li {
@@ -27,7 +28,7 @@ a {
 header {
   background-color: #edf2ec;
 }
-.logo{
+.logo {
   margin-right: 1px;
   margin-bottom: 7px;
 }
@@ -41,7 +42,7 @@ header {
   display: flex;
   align-items: center;
 }
-.nav{
+.nav {
   margin-right: 5px;
 }
 .nav-list {
@@ -81,16 +82,16 @@ header {
   transform: scale(1);
 }
 .welcome {
-  height: 532px;
   background-color: #edf2ec;
 }
 .welcome-content {
   display: flex;
+  justify-content: space-between;
   padding: 62px 0px;
 }
-.welcome-leafs {
+/* .welcome-leafs {
   margin-right: 224px;
-}
+} */
 .leafs {
   background-image: url("../assets/img/leafs.png");
   background-repeat: no-repeat;
@@ -99,8 +100,9 @@ header {
   width: 448px;
   height: 407px;
 }
-.welcome-info{
+.welcome-info {
   padding-top: 38px;
+  width: 45%;
 }
 h1,
 .welcome-title {
@@ -146,11 +148,13 @@ h1 {
 }
 .about-content {
   display: flex;
+  justify-content: space-between;
   padding: 93px 0px;
 }
 .about-info {
   padding-top: 65px;
-  margin-right: 163px;
+  width: 45%;
+  /* margin-right: 163px; */
 }
 h2,
 .about-mainTitle,
@@ -176,7 +180,7 @@ h2,
   background-image: url("../assets/img/houseplant.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
 }
 
 .service {
@@ -188,14 +192,14 @@ h2,
 .service-info {
   display: flex;
   justify-content: flex-start;
-  height: 94px;
+  /* height: 94px; */
   margin-bottom: 90px;
 }
 .service-title {
   width: 306px;
   margin-right: 142px;
 }
-.service-tabs{
+.service-tabs {
   padding-top: 28px;
 }
 .service-tabs .service-btn:not(:last-child) {
@@ -212,6 +216,7 @@ h2,
   font-size: 20px;
   line-height: 26px;
   color: #e06733;
+  margin-bottom: 10px;
 }
 .service-btn:hover {
   background-color: #e06733;
@@ -221,16 +226,18 @@ h2,
 }
 .service-image {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 116px;
+  grid-template-columns: repeat(3, 27%);
+  /* grid-template-columns:repeat(auto-fill, minmax(330px, 1fr)); */
+  /* column-gap: 116px; */
+  column-gap: 9%;
   row-gap: 55px;
 }
 .service-item {
-  width: 330px;
+  width: 100%;
   height: 450px;
 }
 .service-img {
-  width: 329px;
+  width: 100%;
   height: 350px;
 }
 .service-description {
@@ -273,7 +280,6 @@ h2.prices-mainTitle {
   line-height: 48px;
   color: #000000;
   margin-bottom: 60px;
-
 }
 .prices-itemsContainer {
   width: 332px;
@@ -445,13 +451,14 @@ details[open] > summary::after {
   background-color: #edf2ec;
 }
 .contacts-content {
-  padding-top: 53px;
+  /* padding-top: 53px; */
   display: flex;
+  justify-content: space-between;
 }
-.contacts-women {
-  display: flex;
+/* .contacts-women {
+  display: flex; 
   margin-right: 64px;
-}
+} */
 .contacts-womenImage {
   width: 400px;
   height: 497px;
@@ -459,12 +466,15 @@ details[open] > summary::after {
   background-repeat: no-repeat;
   background-position: left;
   background-size: cover;
-  margin-right: 115px;
+  /* margin-right: 115px; */
 }
 h2.contacts-title {
+  padding-top: 53px;
   font-weight: 700;
   line-height: 52px;
-  padding-top: 10px;
+  /* padding-top: 10px; */
+  text-align: center;
+  margin: 0px;
 }
 .dropdown {
   margin-top: 95px;
@@ -529,7 +539,7 @@ footer {
   justify-content: space-between;
   align-items: center;
 }
-.footer-info{
+.footer-info {
   display: flex;
 }
 .copy,
@@ -544,13 +554,13 @@ footer {
   color: #000000;
 }
 .copy,
-.year{
+.year {
   margin-right: 20px;
 }
 .my-git {
   text-decoration: none;
 }
-.github{
+.github {
   margin-left: 18px;
 }
 .social-media-links {
