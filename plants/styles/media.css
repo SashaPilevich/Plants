@@ -5,6 +5,9 @@
   }
 }
 @media (max-width: 768px) {
+  .header-nav{
+    height: 117px;
+  }
   .welcome-content {
     flex-direction: row-reverse;
   }
@@ -122,6 +125,16 @@
 @media (max-width: 655px) {
   .nav {
     display: none;
+  }
+.header-nav{
+  align-items: normal;
+  height: 96px;
+}
+.burger-menu-container{
+  display: flex;
+}
+  .burger-menu {
+    display: block;
   }
   .service-image {
     grid-template-columns: repeat(1, 70%);
@@ -246,6 +259,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
   h2.prices-mainTitle {
     font-size: 25px;
@@ -285,7 +299,36 @@
     font-size: 15px;
     line-height: 20px;
   }
-  .prices-leafs{
+  .prices-leafs {
     display: none;
+  }
+  h2.contacts-title {
+    padding-top: 25px;
+    line-height: 33px;
+    font-size: 25px;
+    margin-bottom: 80px;
+  }
+  .dropdown {
+    margin-bottom: 132px;
+    padding: 5px 17px 21px;
+  }
+  .dropdown-arrow {
+    margin-right: 0px;
+  }
+  .contacts-womenImage {
+    width: 100px;
+    height: 124px;
+  }
+  .footer-content {
+    padding: 22px 0px 7px;
+  }
+  .copy,
+  .year,
+  .my-git,
+  .school-name{
+    line-height: 24px;
+  }
+  .school-name{
+    margin-bottom: 3px;
   }
 }
