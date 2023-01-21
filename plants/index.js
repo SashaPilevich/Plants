@@ -29,3 +29,33 @@ const myGrade = {
   "Интерактивность, реализуемая через css":20
 }
 console.log(myGrade, 110)
+
+let isOpen = false;
+const burger = document.querySelector('.burger-menu');
+const burgerLine = document.querySelector('.burger-line-one');
+const burgerLineTwo = document.querySelector('.burger-line-two');
+const mobilenav = document.querySelector('.mobile-nav');
+const link = document.querySelector('.nav-list-mobile');
+
+burger.addEventListener('click', openCloseBurgerMenu);
+link.addEventListener('click', (event) => {
+  event.stopPropagation()
+  openCloseBurgerMenu()
+});
+mobilenav.addEventListener('click', openCloseBurgerMenu);
+
+function openCloseBurgerMenu(){
+  if (!isOpen) {
+    burger.classList.add('active');
+    burgerLine.classList.add('active');
+    burgerLineTwo.classList.add('active');
+    mobilenav.classList.add('active');
+    isOpen = true;
+  } else {
+    burger.classList.remove('active');
+    burgerLine.classList.remove('active');
+    burgerLineTwo.classList.remove('active');
+    mobilenav.classList.remove('active');
+    isOpen = false;
+  }
+}
