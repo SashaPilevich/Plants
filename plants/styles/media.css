@@ -6,7 +6,7 @@
 }
 @media (max-width: 768px) {
   .header-nav{
-    height: 96px;
+    height: 117px;
   }
   .welcome-content {
     flex-direction: row-reverse;
@@ -125,6 +125,16 @@
 @media (max-width: 655px) {
   .nav {
     display: none;
+  }
+.header-nav{
+  align-items: normal;
+  height: 96px;
+}
+.burger-menu-container{
+  display: flex;
+}
+  .burger-menu {
+    display: block;
   }
   .service-image {
     grid-template-columns: repeat(1, 70%);
@@ -249,6 +259,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
   h2.prices-mainTitle {
     font-size: 25px;
