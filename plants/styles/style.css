@@ -121,7 +121,7 @@ header {
   z-index: 2;
 }
 .burger-menu.active::before {
-  top: 10px;
+  top: 9px;
   transform: rotate(45deg);
   transition: top 0.3s ease, transform 0.3s 0.3s ease;
 }
