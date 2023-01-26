@@ -213,10 +213,38 @@ h2,
   line-height: 26px;
   color: #e06733;
 }
-.service-btn:hover {
+.btn-garden.active,
+.btn-plant.active,
+.btn-lawn.active{
   background-color: #e06733;
   color: white;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.btn-garden.noactive,
+.btn-plant.noactive,
+.btn-lawn.noactive{
+  background-color: transparent;
+  color:#e06733 ;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.garden.blur,
+.lawn.blur,
+.plant.blur{
+  filter: blur(5px);
+  transition: all 0.5s ease-in-out;
+}
+.garden.noblur,
+.lawn.noblur,
+.plant.noblur{
+  filter: blur(0px);
+  transition: all 0.5s ease-in-out;
+}
+.service-btn:hover {
+  /* background-color: #e06733;
+  color: white;
+  transition: all 0.3s ease; */
   cursor: pointer;
 }
 .service-image {
