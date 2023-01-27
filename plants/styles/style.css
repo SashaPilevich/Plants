@@ -242,9 +242,6 @@ h2,
   transition: all 0.5s ease-in-out;
 }
 .service-btn:hover {
-  /* background-color: #e06733;
-  color: white;
-  transition: all 0.3s ease; */
   cursor: pointer;
 }
 .service-image {
@@ -316,17 +313,35 @@ h2.prices-mainTitle {
 details[open] .prices-itemsContainer {
   height: 430px;
 }
-.prices-itemsContainer .details-container details[open] {
+.prices-itemsContainer.details-container-show {
   margin-bottom: 130px;
 }
-details {
+/* details {
+  width: 250px;
+  height: 50px;
+  background: #edf2ec;
+  border-radius: 20px;
+} */
+.details-container {
   width: 250px;
   height: 50px;
   background: #edf2ec;
   border-radius: 20px;
 }
 
-summary {
+/* summary {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: #000000;
+  padding-left: 40px;
+  list-style: none;
+  padding-top: 15px;
+  position: relative;
+} */
+.details-container-header {
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
@@ -338,7 +353,7 @@ summary {
   padding-top: 15px;
   position: relative;
 }
-summary::after {
+.details-container-header::after {
   content: "";
   clear: both;
   position: absolute;
@@ -355,25 +370,32 @@ summary::after {
   background-position: center;
   cursor: pointer;
 }
-details[open] {
-  background: #d6e7d2;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
+.details-container:not(.details-container-show) .details-container-body {
+  display: none;
 }
-details[open] > summary .summary-open {
-  transition: all 0.4s ease;
-}
-details[open] > summary {
-  margin-bottom: 12px;
-  transition: all 0.4s ease;
-}
-details[open] > summary::after {
+.details-container-show .details-container-header::after{
   transform: rotate(-180deg);
   background-color: #aea1a1;
   margin-bottom: 12px;
   transition: all 0.4s ease;
 }
-.summary-open {
+.details-container-show .details-container-header{
+  margin-bottom: 12px;
+  transition: all 0.4s ease;
+}
+.details-container-show {
+  background: #d6e7d2;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  margin-bottom: 130px;
+}
+.prices-itemsContainer .details-container.details-container-show{
+  margin-bottom: 130px;
+}
+.details-container-show .details-container-body{
+  transition: all 0.4s ease;
+}
+.details-container-body {
   width: 250px;
   height: 114px;
   padding: 0px 40px;
@@ -381,6 +403,7 @@ details[open] > summary::after {
   border-radius: 20px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
+  overflow: hidden;
 }
 .line {
   width: 164px;

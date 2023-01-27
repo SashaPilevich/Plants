@@ -45,66 +45,65 @@ btnGarden.addEventListener("click", () => {
   console.log("garden");
   if (!inBlurGarden && count == 0) {
     lawnContainer.forEach((item) => {
-      item.classList.remove('noblur')
-      item.classList.add('blur')
+      item.classList.remove("noblur");
+      item.classList.add("blur");
     });
     plantContainer.forEach((item) => {
-      item.classList.remove('noblur')
-      item.classList.add('blur')
+      item.classList.remove("noblur");
+      item.classList.add("blur");
     });
-    btnGarden.classList.add('active')
-    btnGarden.classList.remove('noactive')
+    btnGarden.classList.add("active");
+    btnGarden.classList.remove("noactive");
     inBlurGarden = true;
     ++count;
     console.log(count);
-  }else if(!inBlurGarden && count == 1 && inBlurLawn){
+  } else if (!inBlurGarden && count == 1 && inBlurLawn) {
     gardenContainer.forEach((item) => {
-      item.classList.add('noblur')
-      item.classList.remove('blur')
+      item.classList.add("noblur");
+      item.classList.remove("blur");
     });
     plantContainer.forEach((item) => {
-      item.classList.add('blur')
+      item.classList.add("blur");
     });
-    btnGarden.classList.add('active')
-    btnGarden.classList.remove('noactive')
+    btnGarden.classList.add("active");
+    btnGarden.classList.remove("noactive");
     inBlurGarden = true;
     ++count;
     console.log(count);
-  } else if(!inBlurGarden && count == 1 && inBlurPlant){
+  } else if (!inBlurGarden && count == 1 && inBlurPlant) {
     gardenContainer.forEach((item) => {
-      item.classList.add('noblur')
-      item.classList.remove('blur')
+      item.classList.add("noblur");
+      item.classList.remove("blur");
     });
     lawnContainer.forEach((item) => {
-      item.classList.add('blur')
+      item.classList.add("blur");
     });
-    btnGarden.classList.add('active')
-    btnGarden.classList.remove('noactive')
+    btnGarden.classList.add("active");
+    btnGarden.classList.remove("noactive");
     inBlurGarden = true;
     ++count;
     console.log(count);
-  } else if(inBlurGarden && count == 2){
+  } else if (inBlurGarden && count == 2) {
     gardenContainer.forEach((item) => {
-      item.classList.remove('noblur')
-      item.classList.add('blur')
+      item.classList.remove("noblur");
+      item.classList.add("blur");
     });
-    btnGarden.classList.add('noactive')
-    btnGarden.classList.remove('active')
+    btnGarden.classList.add("noactive");
+    btnGarden.classList.remove("active");
     inBlurGarden = false;
     --count;
     console.log(count);
-  }
-  else if(inBlurGarden && count == 1){
+  } else if (inBlurGarden && count == 1) {
     lawnContainer.forEach((item) => {
-      item.classList.add('noblur')
-      item.classList.remove('blur')
+      item.classList.add("noblur");
+      item.classList.remove("blur");
     });
     plantContainer.forEach((item) => {
-      item.classList.add('noblur')
-      item.classList.remove('blur')
+      item.classList.add("noblur");
+      item.classList.remove("blur");
     });
-    btnGarden.classList.add('noactive')
-    btnGarden.classList.remove('active')
+    btnGarden.classList.add("noactive");
+    btnGarden.classList.remove("active");
     inBlurGarden = false;
     --count;
     console.log(count);
@@ -114,62 +113,62 @@ btnLawn.addEventListener("click", () => {
   console.log("lawn");
   if (!inBlurLawn && count == 0) {
     gardenContainer.forEach((item) => {
-      item.classList.remove('noblur')
-      item.classList.add('blur')
+      item.classList.remove("noblur");
+      item.classList.add("blur");
     });
     plantContainer.forEach((item) => {
-      item.classList.remove('noblur')
-      item.classList.add('blur')
+      item.classList.remove("noblur");
+      item.classList.add("blur");
     });
-    btnLawn.classList.add('active')
-    btnLawn.classList.remove('noactive')
+    btnLawn.classList.add("active");
+    btnLawn.classList.remove("noactive");
     inBlurLawn = true;
     ++count;
     console.log(count);
-  }else if(!inBlurLawn && count == 1 && inBlurGarden){
+  } else if (!inBlurLawn && count == 1 && inBlurGarden) {
     lawnContainer.forEach((item) => {
-      item.classList.add('noblur')
-      item.classList.remove('blur')
+      item.classList.add("noblur");
+      item.classList.remove("blur");
     });
     plantContainer.forEach((item) => {
-      item.classList.add('blur')
+      item.classList.add("blur");
     });
-    btnLawn.classList.add('active')
-    btnLawn.classList.remove('noactive')
+    btnLawn.classList.add("active");
+    btnLawn.classList.remove("noactive");
     inBlurLawn = true;
     ++count;
     console.log(count);
-  } else if(!inBlurLawn && count == 1 && inBlurPlant){
+  } else if (!inBlurLawn && count == 1 && inBlurPlant) {
     lawnContainer.forEach((item) => {
-      item.classList.add('noblur')
-      item.classList.remove('blur')
+      item.classList.add("noblur");
+      item.classList.remove("blur");
     });
-    btnLawn.classList.add('active')
-    btnLawn.classList.remove('noactive')
+    btnLawn.classList.add("active");
+    btnLawn.classList.remove("noactive");
     inBlurLawn = true;
     ++count;
     console.log(count);
-  } else if(inBlurLawn && count == 2){
+  } else if (inBlurLawn && count == 2) {
     lawnContainer.forEach((item) => {
-      item.classList.remove('noblur')
-      item.classList.add('blur')
+      item.classList.remove("noblur");
+      item.classList.add("blur");
     });
-    btnLawn.classList.add('noactive')
-    btnLawn.classList.remove('active')
+    btnLawn.classList.add("noactive");
+    btnLawn.classList.remove("active");
     inBlurLawn = false;
     --count;
     console.log(count);
-  }else if(inBlurLawn && count == 1){
+  } else if (inBlurLawn && count == 1) {
     gardenContainer.forEach((item) => {
-      item.classList.add('noblur')
-      item.classList.remove('blur')
+      item.classList.add("noblur");
+      item.classList.remove("blur");
     });
     plantContainer.forEach((item) => {
-      item.classList.add('noblur')
-      item.classList.remove('blur')
+      item.classList.add("noblur");
+      item.classList.remove("blur");
     });
-    btnLawn.classList.add('noactive')
-    btnLawn.classList.remove('active')
+    btnLawn.classList.add("noactive");
+    btnLawn.classList.remove("active");
     inBlurLawn = false;
     --count;
     console.log(count);
@@ -179,63 +178,93 @@ btnPlant.addEventListener("click", () => {
   console.log("plant");
   if (!inBlurPlant && count == 0) {
     gardenContainer.forEach((item) => {
-      item.classList.remove('noblur')
-      item.classList.add('blur')
+      item.classList.remove("noblur");
+      item.classList.add("blur");
     });
     lawnContainer.forEach((item) => {
-      item.classList.remove('noblur')
-      item.classList.add('blur')
+      item.classList.remove("noblur");
+      item.classList.add("blur");
     });
-    btnPlant.classList.add('active')
-    btnPlant.classList.remove('noactive')
+    btnPlant.classList.add("active");
+    btnPlant.classList.remove("noactive");
     inBlurPlant = true;
     ++count;
     console.log(count);
-  }else if(!inBlurPlant && count == 1 && inBlurGarden){
+  } else if (!inBlurPlant && count == 1 && inBlurGarden) {
     plantContainer.forEach((item) => {
-      item.classList.add('noblur')
-      item.classList.remove('blur')
+      item.classList.add("noblur");
+      item.classList.remove("blur");
     });
-    btnPlant.classList.add('active')
-    btnPlant.classList.remove('noactive')
+    btnPlant.classList.add("active");
+    btnPlant.classList.remove("noactive");
     inBlurPlant = true;
     ++count;
     console.log(count);
-  } else if(!inBlurPlant && count == 1 && inBlurLawn){
+  } else if (!inBlurPlant && count == 1 && inBlurLawn) {
     plantContainer.forEach((item) => {
-      item.classList.add('noblur')
-      item.classList.remove('blur')
+      item.classList.add("noblur");
+      item.classList.remove("blur");
     });
-    btnPlant.classList.add('active')
-    btnPlant.classList.remove('noactive')
+    btnPlant.classList.add("active");
+    btnPlant.classList.remove("noactive");
     inBlurPlant = true;
     ++count;
     console.log(count);
-  } else if(inBlurPlant && count == 2){
+  } else if (inBlurPlant && count == 2) {
     plantContainer.forEach((item) => {
-      item.classList.remove('noblur')
-      item.classList.add('blur')
+      item.classList.remove("noblur");
+      item.classList.add("blur");
     });
-    btnPlant.classList.add('noactive')
-    btnPlant.classList.remove('active')
+    btnPlant.classList.add("noactive");
+    btnPlant.classList.remove("active");
     inBlurPlant = false;
     --count;
     console.log(count);
-  }
-  else if(inBlurPlant && count == 1){
+  } else if (inBlurPlant && count == 1) {
     lawnContainer.forEach((item) => {
-      item.classList.add('noblur')
-      item.classList.remove('blur')
+      item.classList.add("noblur");
+      item.classList.remove("blur");
     });
     gardenContainer.forEach((item) => {
-      item.classList.add('noblur')
-      item.classList.remove('blur')
+      item.classList.add("noblur");
+      item.classList.remove("blur");
     });
-    btnPlant.classList.add('noactive')
-    btnPlant.classList.remove('active')
+    btnPlant.classList.add("noactive");
+    btnPlant.classList.remove("active");
     inBlurPlant = false;
     --count;
     console.log(count);
   }
+});
+
+const btnOrder = document.querySelectorAll(".summary-btn");
+
+btnOrder.forEach((item) => {
+  item.addEventListener("click", () => {
+    console.log("order");
+    document.location = "#contacts";
+  });
+});
+
+
+const btnAccordeon = document.querySelectorAll(".details-container");
+let countItem = 0
+btnAccordeon.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    if(!e.target.parentElement.classList.contains("details-container-show") && countItem == 0){
+      e.target.parentElement.classList.add("details-container-show");
+      ++countItem
+      console.log(countItem) 
+    } else if(e.target.parentElement.classList.contains("details-container-show") && countItem == 1) {
+      e.target.parentElement.classList.remove("details-container-show");
+      --countItem 
+      console.log(countItem) 
+    } else if(!e.target.parentElement.classList.contains("details-container-show") && countItem == 1){
+      btnAccordeon.forEach((elem) => {
+        elem.classList.remove("details-container-show");
+      })
+       e.target.parentElement.classList.add("details-container-show");
+    }
+  });
 });
 
