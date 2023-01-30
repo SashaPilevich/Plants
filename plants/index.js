@@ -240,31 +240,86 @@ btnPlant.addEventListener("click", () => {
 const btnOrder = document.querySelectorAll(".summary-btn");
 
 btnOrder.forEach((item) => {
-  item.addEventListener("click", () => {
+  item.addEventListener("click", (event) => {
     console.log("order");
+    event.stopPropagation();
     document.location = "#contacts";
   });
 });
 
-
 const btnAccordeon = document.querySelectorAll(".details-container");
-let countItem = 0
+let countItem = 0;
 btnAccordeon.forEach((item) => {
   item.addEventListener("click", (e) => {
-    if(!e.target.parentElement.classList.contains("details-container-show") && countItem == 0){
+    if (
+      !e.target.parentElement.classList.contains("details-container-show") &&
+      countItem == 0
+    ) {
       e.target.parentElement.classList.add("details-container-show");
-      ++countItem
-      console.log(countItem) 
-    } else if(e.target.parentElement.classList.contains("details-container-show") && countItem == 1) {
+      ++countItem;
+      console.log(countItem);
+    } else if (
+      e.target.parentElement.classList.contains("details-container-show") &&
+      countItem == 1
+    ) {
       e.target.parentElement.classList.remove("details-container-show");
-      --countItem 
-      console.log(countItem) 
-    } else if(!e.target.parentElement.classList.contains("details-container-show") && countItem == 1){
+      --countItem;
+      console.log(countItem);
+    } else if (
+      !e.target.parentElement.classList.contains("details-container-show") &&
+      countItem == 1
+    ) {
       btnAccordeon.forEach((elem) => {
         elem.classList.remove("details-container-show");
-      })
-       e.target.parentElement.classList.add("details-container-show");
+      });
+      e.target.parentElement.classList.add("details-container-show");
     }
   });
 });
 
+const dropdownArrow = document.querySelector(".dropdown-arrow");
+const dropdown = document.querySelector(".dropdown");
+const dropdownContainer = document.querySelector(".dropdown-container");
+const dropdownList = document.querySelector(".dropdown-list");
+const selectItem = document.querySelectorAll(".dropdown-list li");
+const textLabel = document.querySelector(".selLabel");
+const cityCard = document.querySelectorAll('.city-card')
+dropdownArrow.addEventListener("click", () => {
+  dropdown.classList.toggle("active");
+  dropdownArrow.classList.toggle("active");
+  dropdownContainer.classList.toggle("active");
+  dropdownList.classList.toggle("active");
+  cityCard.forEach((it) => {
+    it.classList.remove('active')
+    
+  })
+});
+selectItem.forEach((item) => {
+  item.addEventListener("click", (event) => {
+    console.log(event.target.parentElement.dataset.value)
+    
+    let textOfItem = event.target.innerText;
+    textLabel.innerHTML = textOfItem;
+    dropdown.classList.remove("active");
+    dropdownArrow.classList.remove("active");
+    dropdownContainer.classList.remove("active");
+    dropdownList.classList.remove("active");
+    dropdownContainer.classList.add('active-city')
+    cityCard.forEach((it) => {
+      if(event.target.parentElement.dataset.value === it.dataset.value){
+        it.classList.toggle('active')
+      }
+    })
+    
+  });
+});
+// selectItem.addEventListener('click',(e) => {
+//   console.log(e.target.innerText)
+// // textLabel.innerHTML =
+// })
+
+// $(".dropdown-list li").click(function() {
+//   $('.selLabel').text($(this).text());
+//   $('.dropdown').removeClass('active');
+//   $('.selected-item p span').text($('.selLabel').text());
+// });
