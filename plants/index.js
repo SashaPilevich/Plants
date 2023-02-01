@@ -320,8 +320,6 @@ selectItem.forEach((item) => {
     
   });
 });
-  
-}
 
 
 let isOpen = false;
