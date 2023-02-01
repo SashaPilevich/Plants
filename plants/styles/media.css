@@ -5,12 +5,12 @@
   }
 }
 @media (max-width: 768px) {
-  .header-nav{
+  .header-nav {
     height: 117px;
   }
   .welcome-content {
     flex-direction: row-reverse;
-    padding:40px 0px 70px;
+    padding: 40px 0px 70px;
   }
   h1,
   .welcome-title {
@@ -58,7 +58,7 @@
     width: 250px;
     height: 258px;
   }
-  .service-content{
+  .service-content {
     padding: 60px 0px 70px;
   }
   .service-btn {
@@ -70,17 +70,17 @@
     column-gap: 16%;
     row-gap: 38px;
   }
-  .service-img{
+  .service-img {
     display: none;
   }
-.service-img-media {
-  display: block;
-}
+  .service-img-media {
+    display: block;
+  }
   .service-info {
     flex-direction: column;
     margin-bottom: 33px;
   }
-  .service-description{
+  .service-description {
     margin-top: 0px;
   }
   .service-title {
@@ -98,7 +98,7 @@
     margin-left: 14px;
     margin-bottom: 57px;
   }
-  .prices-content{
+  .prices-content {
     padding-bottom: 88px;
   }
   .prices-info {
@@ -122,7 +122,7 @@
     padding-top: 40px;
     margin-bottom: 100px;
   }
-  .contacts-women{
+  .contacts-women {
     margin-left: 19px;
   }
   .contacts-womenImage {
@@ -130,6 +130,8 @@
     height: 248px;
     background-position: center;
   }
+  .dropdown .dropdown-container {
+    margin-top: 0px;}
   .dropdown {
     margin-top: 0px;
     margin-bottom: 249px;
@@ -138,7 +140,7 @@
     flex-direction: column;
     padding: 20px 0px 22px;
   }
-  
+
   .school-name {
     margin-bottom: 8px;
     margin-top: -8px;
@@ -151,13 +153,13 @@
   .nav {
     display: none;
   }
-.header-nav{
-  align-items: normal;
-  height: 96px;
-}
-.burger-menu-container{
-  display: flex;
-}
+  .header-nav {
+    align-items: normal;
+    height: 96px;
+  }
+  .burger-menu-container {
+    display: flex;
+  }
   .burger-menu {
     display: block;
   }
@@ -205,16 +207,52 @@
     grid-template-columns: repeat(1, 80%);
   }
   .dropdown {
+    padding: 0px;
+  }
+  .dropdown,
+  .dropdown .dropdown-container {
     width: 300px;
+  }
+  .list-line {
+    width: 250px;
+  }
+  .city-card {
+    width: 282px;
+    height: 212px;
+    padding: 10px 20px;
+    margin: 47px 0px 0px 7px;
+  }
+  .city-info{
+    margin-bottom: 25px;
+  }
+  .city,
+  .phone,
+  .city-name,
+  .city-phone {
+    line-height: 40px;
+    font-size: 14px;
+  }
+  
+  .phone{
+    margin-right: 0px;
+  }
+  .office,
+  .city-adress{
+    line-height: 20px;
+    font-size: 14px;
+  }
+  .btn-container{
+    margin-left: 0px;
   }
 }
 @media (max-width: 381px) {
-  .logo-text{
+  .logo-text {
     padding-top: 3px;
   }
   .logo {
     margin-right: 0px;
-    margin-bottom: 4px;}
+    margin-bottom: 4px;
+  }
   .container {
     padding: 0 25px;
   }
@@ -260,7 +298,7 @@
   .service-content {
     padding: 29px 0px;
   }
-  .service-info{
+  .service-info {
     margin-bottom: 30px;
   }
   .service-title {
@@ -308,19 +346,22 @@
   }
   .prices-itemsContainer .details-container:not(:last-child) {
     margin-bottom: 14px;
-}
+  }
 
-  details {
+  .details-container{
     width: 180px;
     height: 49px;
   }
-  summary {
+  .details-container-header{
     font-size: 15px;
     padding-left: 30px;
   }
-  .summary-open {
+  .details-container-body{
     width: 180px;
     height: 125px;
+  }
+  .prices-itemsContainer .details-container.details-container-show {
+    margin-bottom: 130px;
   }
   .line {
     width: 100px;
@@ -349,12 +390,12 @@
   }
   .dropdown {
     margin-bottom: 134px;
-    padding: 5px 17px 21px;
+    /* padding: 5px 17px 21px; */
   }
   .dropdown-arrow {
     margin-right: 6px;
   }
-  .contacts-women{
+  .contacts-women {
     margin-left: -4px;
   }
   .contacts-womenImage {
@@ -367,13 +408,13 @@
   .copy,
   .year,
   .my-git,
-  .school-name{
+  .school-name {
     line-height: 24px;
   }
-  .footer-info{
+  .footer-info {
     margin-bottom: 10px;
   }
-  .school-name{
+  .school-name {
     margin-bottom: 0px;
   }
 }
