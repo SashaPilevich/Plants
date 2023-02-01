@@ -315,31 +315,12 @@ details[open] .prices-itemsContainer {
 .prices-itemsContainer.details-container-show {
   margin-bottom: 130px;
 }
-/* details {
-  width: 250px;
-  height: 50px;
-  background: #edf2ec;
-  border-radius: 20px;
-} */
 .details-container {
   width: 250px;
   height: 50px;
   background: #edf2ec;
   border-radius: 20px;
 }
-
-/* summary {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 20px;
-  color: #000000;
-  padding-left: 40px;
-  list-style: none;
-  padding-top: 15px;
-  position: relative;
-} */
 .details-container-header {
   font-family: "Inter";
   font-style: normal;
@@ -599,22 +580,18 @@ h2.contacts-title {
   padding: 0px 35px;
 }
 .dropdown-list li:nth-child(1) {
-  /* background-color: #1abc9c; */
   z-index: 4;
   transform: translateY(0%);
 }
 .dropdown-list li:nth-child(2) {
-  /* background-color: #3498db; */
   z-index: 3;
   transform: translateY(3%);
 }
 .dropdown-list li:nth-child(3) {
-  /* background-color: #9b59b6; */
   z-index: 2;
   transform: translateY(6%);
 }
 .dropdown-list li:nth-child(4) {
-  /* background-color: #e67e22; */
   z-index: 1;
   transform: translateY(9%);
 }
@@ -632,8 +609,6 @@ h2.contacts-title {
 }
 
 .dropdown-list li span {
-  /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); */
-  /* visibility: hidden; */
   width: 100%;
   height: 35px;
   font-family: "Inter";
@@ -643,7 +618,6 @@ h2.contacts-title {
   line-height: 40px;
   letter-spacing: 0.05em;
   color: #499a18;
-  /* padding: 0 35px; */
   display: block;
   cursor: pointer;
 }
@@ -662,7 +636,6 @@ h2.contacts-title {
   width: 380px;
   height: 0px;
   border: 1px solid #d9d9d9;
-  /* margin-left: 35px; */
 }
 .city-card {
   width: 448px;
@@ -733,60 +706,7 @@ h2.contacts-title {
   transition: all 0.4s ease-in-out;
 }
 
-/* .dropdown {
-  margin-top: 95px;
-  padding: 5px 21px;
-  position: relative;
-  width: 450px;
-  height: 50px;
-  background: #d6e7d2;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 0px;
-}
-.dropdown-list {
-  display: none;
-  position: absolute;
-  z-index: 5;
-}
-.dropdown-city {
-  width: 100%;
-  border: none;
-  background-color: transparent;
-  font-family: "Inter";
-  font-size: 20px;
-  line-height: 40px;
-  letter-spacing: 0.05em;
-  color: #717171;
-  text-align: left;
-}
-.dropdown-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.dropdown:hover {
-  cursor: pointer;
-  background-color: #c1e698;
-  transition: all 0.3s ease-in;
-}
-.dropdown-arrow {
-  width: 16px;
-  height: 16px;
-  background-color: #aea1a1;
-  border-radius: 50%;
-  background-image: url("../assets/img/arrowdowncity.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  border: none;
-  cursor: pointer;
-  margin-right: 15px;
-}
-.dropdown-arrow:hover {
-  background-color: #8ba07e;
-  transform: rotate(-180deg);
-  transition: all 0.3s ease-in;
-} */
+
 footer {
   background-color: #ffffff;
 }
