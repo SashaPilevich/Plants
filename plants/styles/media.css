@@ -131,8 +131,10 @@
     background-position: center;
   }
   .dropdown .dropdown-container {
-    margin-top: 0px;}
+    margin-top: 0px;
+  }
   .dropdown {
+    width: 450px;
     margin-top: 0px;
     margin-bottom: 249px;
   }
@@ -222,7 +224,7 @@
     padding: 10px 20px;
     margin: 47px 0px 0px 7px;
   }
-  .city-info{
+  .city-info {
     margin-bottom: 25px;
   }
   .city,
@@ -232,16 +234,16 @@
     line-height: 40px;
     font-size: 14px;
   }
-  
-  .phone{
+
+  .phone {
     margin-right: 0px;
   }
   .office,
-  .city-adress{
+  .city-adress {
     line-height: 20px;
     font-size: 14px;
   }
-  .btn-container{
+  .btn-container {
     margin-left: 0px;
   }
 }
@@ -348,15 +350,15 @@
     margin-bottom: 14px;
   }
 
-  .details-container{
+  .details-container {
     width: 180px;
     height: 49px;
   }
-  .details-container-header{
+  .details-container-header {
     font-size: 15px;
     padding-left: 30px;
   }
-  .details-container-body{
+  .details-container-body {
     width: 180px;
     height: 125px;
   }
