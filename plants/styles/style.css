@@ -344,10 +344,35 @@ h2,
   color: #e06733;
   margin-bottom: 10px;
 }
-.service-btn:hover {
+.btn-garden.active,
+.btn-plant.active,
+.btn-lawn.active {
   background-color: #e06733;
   color: white;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.btn-garden.noactive,
+.btn-plant.noactive,
+.btn-lawn.noactive {
+  background-color: transparent;
+  color: #e06733;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.garden.blur,
+.lawn.blur,
+.plant.blur {
+  filter: blur(5px);
+  transition: all 0.5s ease-in-out;
+}
+.garden.noblur,
+.lawn.noblur,
+.plant.noblur {
+  filter: blur(0px);
+  transition: all 0.5s ease-in-out;
+}
+.service-btn:hover {
   cursor: pointer;
 }
 .service-image {
@@ -422,17 +447,16 @@ h2.prices-mainTitle {
 details[open] .prices-itemsContainer {
   height: 430px;
 }
-.prices-itemsContainer .details-container details[open] {
+.prices-itemsContainer.details-container-show {
   margin-bottom: 130px;
 }
-details {
+.details-container {
   width: 250px;
   height: 50px;
   background: #edf2ec;
   border-radius: 20px;
 }
-
-summary {
+.details-container-header {
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
@@ -444,7 +468,7 @@ summary {
   padding-top: 15px;
   position: relative;
 }
-summary::after {
+.details-container-header::after {
   content: "";
   clear: both;
   position: absolute;
@@ -461,25 +485,32 @@ summary::after {
   background-position: center;
   cursor: pointer;
 }
-details[open] {
-  background: #d6e7d2;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
+.details-container:not(.details-container-show) .details-container-body {
+  display: none;
 }
-details[open] > summary .summary-open {
-  transition: all 0.4s ease;
-}
-details[open] > summary {
-  margin-bottom: 12px;
-  transition: all 0.4s ease;
-}
-details[open] > summary::after {
+.details-container-show .details-container-header::after {
   transform: rotate(-180deg);
   background-color: #aea1a1;
   margin-bottom: 12px;
   transition: all 0.4s ease;
 }
-.summary-open {
+.details-container-show .details-container-header {
+  margin-bottom: 12px;
+  transition: all 0.4s ease;
+}
+.details-container-show {
+  background: #d6e7d2;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  margin-bottom: 130px;
+}
+.prices-itemsContainer .details-container.details-container-show {
+  margin-bottom: 130px;
+}
+.details-container-show .details-container-body {
+  transition: all 0.4s ease;
+}
+.details-container-body {
   width: 250px;
   height: 114px;
   padding: 0px 40px;
@@ -487,6 +518,7 @@ details[open] > summary::after {
   border-radius: 20px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
+  overflow: hidden;
 }
 .line {
   width: 164px;
@@ -597,7 +629,7 @@ h2.contacts-title {
   text-align: center;
   margin: 0px;
 }
-.dropdown {
+.dropdown .dropdown-container {
   margin-top: 95px;
   padding: 5px 21px;
   position: relative;
@@ -606,13 +638,25 @@ h2.contacts-title {
   background: #d6e7d2;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px;
+  perspective: 800px;
+  z-index: 10;
 }
-.dropdown-list {
-  display: none;
-  position: absolute;
-  z-index: 5;
+.dropdown .dropdown-container.active {
+  background: #c1e698;
+  box-shadow: 0px 0px 0px 0px;
+  margin-bottom: 0px;
 }
-.dropdown-city {
+.dropdown .dropdown-container.active-city {
+  background: #c1e698;
+  box-shadow: 0px 0px 0px 0px;
+}
+
+.dropdown-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.selLabel {
   width: 100%;
   border: none;
   background-color: transparent;
@@ -623,16 +667,7 @@ h2.contacts-title {
   color: #717171;
   text-align: left;
 }
-.dropdown-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.dropdown:hover {
-  cursor: pointer;
-  background-color: #c1e698;
-  transition: all 0.3s ease-in;
-}
+
 .dropdown-arrow {
   width: 16px;
   height: 16px;
@@ -646,11 +681,164 @@ h2.contacts-title {
   cursor: pointer;
   margin-right: 15px;
 }
-.dropdown-arrow:hover {
+.dropdown-arrow.active {
   background-color: #8ba07e;
   transform: rotate(-180deg);
   transition: all 0.3s ease-in;
 }
+.dropdown-list {
+  position: relative;
+  top: -50px;
+  left: 0px;
+  width: 100%;
+}
+.dropdown-list.active {
+  top: 0px;
+  height: 234px;
+  background: #dce9d9;
+  padding: 27px 35px 31px;
+  transition: all 0.4s ease-in-out;
+}
+.dropdown-list li {
+  display: block;
+  list-style: none;
+  left: 0;
+  opacity: 1;
+  transition: transform 300ms ease;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: #dce9d9;
+  padding: 0px 35px;
+}
+.dropdown-list li:nth-child(1) {
+  z-index: 4;
+  transform: translateY(0%);
+}
+.dropdown-list li:nth-child(2) {
+  z-index: 3;
+  transform: translateY(3%);
+}
+.dropdown-list li:nth-child(3) {
+  z-index: 2;
+  transform: translateY(6%);
+}
+.dropdown-list li:nth-child(4) {
+  z-index: 1;
+  transform: translateY(9%);
+}
+.dropdown.active .dropdown-list li:nth-child(1) {
+  transform: translateY(50%);
+}
+.dropdown.active .dropdown-list li:nth-child(2) {
+  transform: translateY(150%);
+}
+.dropdown.active .dropdown-list li:nth-child(3) {
+  transform: translateY(250%);
+}
+.dropdown.active .dropdown-list li:nth-child(4) {
+  transform: translateY(350%);
+}
+
+.dropdown-list li span {
+  width: 100%;
+  height: 35px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 40px;
+  letter-spacing: 0.05em;
+  color: #499a18;
+  display: block;
+  cursor: pointer;
+}
+.dropdown-list.active li .list-line {
+  margin-bottom: 12px;
+}
+.dropdown-list.active li:hover .list-line {
+  border: 1px solid #717171;
+  transition: all 0.3s ease-in-out;
+}
+.dropdown-list.active li:hover span {
+  color: #717171;
+  transition: all 0.3s ease-in-out;
+}
+.list-line {
+  width: 380px;
+  height: 0px;
+  border: 1px solid #d9d9d9;
+}
+.city-card {
+  width: 448px;
+  height: 214px;
+  background: #edf2ec;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  padding: 17px 76px 32px 33px;
+  margin-top: 47px;
+  display: none;
+}
+.city-card.active{
+  display: block;
+}
+.city-info {
+  display: flex;
+  margin-bottom: 24px;
+}
+.field {
+  margin-right: 10px;
+}
+.city,
+.phone,
+.office {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 40px;
+  letter-spacing: 0.05em;
+  color: #000000;
+  text-align: left;
+}
+.city-name,
+.city-phone,
+.city-adress {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 40px;
+  letter-spacing: 0.05em;
+  color: #717171;
+  text-align: left;
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-left: 40px;
+}
+.btn-call {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 122px;
+  height: 26px;
+  border: 1px solid #e06733;
+  border-radius: 5px;
+  font-family: "Inika";
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 13px;
+  color: #717171;
+}
+.btn-call:hover{
+  border: 1px solid transparent;
+  color: white;
+  background-color: #e06733;
+  transition: all 0.4s ease-in-out;
+}
+
+
 footer {
   background-color: #ffffff;
 }
