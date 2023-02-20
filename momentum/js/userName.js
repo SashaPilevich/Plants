@@ -1,6 +1,8 @@
 export const userName = document.querySelector('.name');
 const setLocalStorage = () => {
-  localStorage.setItem('name', userName.value);
+  if(userName.value){
+    localStorage.setItem('name', userName.value);
+  }
 };
 window.addEventListener('beforeunload', setLocalStorage);
 

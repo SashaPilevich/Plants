@@ -1,5 +1,5 @@
 export const greeting = document.querySelector('.greeting');
-const getTimeOfDay = () => {
+export const getTimeOfDay = () => {
   const date = new Date()
   const currentHours = date.getHours()
   if(currentHours>= 6 && currentHours <= 11 ){
