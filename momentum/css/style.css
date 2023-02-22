@@ -1,7 +1,7 @@
 @font-face {
-  font-family: 'Arial-MT';
+  font-family: "Arial-MT";
   src: url("../assets/fonts/Arial-MT.woff"); /* Путь к файлу со шрифтом */
- }
+}
 
 * {
   box-sizing: border-box;
@@ -12,13 +12,14 @@
 body {
   min-width: 480px;
   min-height: 100vh;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   font-size: 16px;
   color: #fff;
   text-align: center;
- background:  rgba(0, 0, 0, 0.5); 
+  background: rgba(0, 0, 0, 0.5);
   background-blend-mode: multiply;
   transition: background-image 1s ease-in-out;
+  background-size: cover;
 }
 
 .header {
@@ -27,30 +28,91 @@ body {
   align-items: flex-start;
   width: 100%;
   height: 30vh;
-  min-height: 220px;  
+  min-height: 220px;
   padding: 20px;
 }
 
 .player-controls {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 120px;
+  /* justify-content: space-between; */
+  /* width: 120px; */
   margin-bottom: 28px;
+  position: relative;
+}
+.player{
+  position: relative;
+  z-index: 2;
+}
+.about-song {
+  display: flex;
+  position: relative;
+}
+.play-time{
+  margin-right: 30px;
+}
+.play-title {
+  width: 130px;
+  text-align: left;
+  margin-right: 30px;
+}
+#progress-bar {
+  -webkit-appearance: none;
+  appearance: none;
+  z-index: 4;
+  height: 5px;
+  background: white;
+  background-image: linear-gradient(gray, gray);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  width: 200px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  margin-right: 30px;
+ 
 }
 
+/* style for the progress bar's slider thumb */
+#progress-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  margin-top: -3px;
+  margin-left: 0px;
+  height: 10px;
+  width: 7px;
+  border: 0;
+  background: gray;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+/* style for the progress bar's runnable track */
+#progress-bar::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  max-height: 5px;
+  border-radius: 30px;
+}
+
+/* style to remove blue shade of the progress bar when clicked on/selected */
+#progress-bar:focus {
+  outline: none;
+}
 .play-list {
   text-align: left;
 }
 
 .play-item {
   position: relative;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
   padding: 5px;
-  padding-left: 20px;
   list-style: none;
-  opacity: .8;
+  opacity: 0.8;
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
+  padding-left: 35px;
 }
 
 .play-item:hover {
@@ -58,15 +120,15 @@ body {
 }
 
 .play-item::before {
-  content: "\2713";  
+  content: "\2713";
   position: absolute;
-  left: 0;
+  left: 5px;
   top: 2px;
   font-weight: 900;
 }
 
 .item-active::before {
-  color: #C5B358;
+  color: #c5b358;
 }
 
 .player-icon,
@@ -80,9 +142,9 @@ body {
   background-color: transparent;
   border: 0;
   outline: 0;
-  opacity: .8;
+  opacity: 0.8;
   cursor: pointer;
-  transition: .3s;  
+  transition: 0.3s;
 }
 
 .player-icon:hover,
@@ -95,10 +157,33 @@ body {
 .slider-icon:active,
 .change-quote:active {
   border: 0;
-  outline: 0;  
+  outline: 0;
   transform: scale(1.1);
 }
-
+.play-btn {
+  width: 20px;
+  height: 20px;
+  background-size: 20px 20px;
+  background-image: url("../assets/svg/play.svg");
+  margin-right: 20px;
+}
+.pause-btn {
+  background-image: url("../assets/svg/pause.svg");
+}
+.player-icon-btn,
+.volume-icon-btn{
+  width: 18px;
+  height: 18px;
+  background-size: 18px 18px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: 0.3s;
+}
 .play {
   width: 40px;
   height: 40px;
@@ -112,10 +197,58 @@ body {
 
 .play-prev {
   background-image: url("../assets/svg/play-prev.svg");
+  margin-right: 15px;
 }
 
 .play-next {
   background-image: url("../assets/svg/play-next.svg");
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.volume-icon{
+  width: 20px;
+  height: 20px;
+  background-size: 20px 20px;
+  background-image: url("../assets/svg/volume.svg");
+}
+.mute{
+  background-image: url("../assets/svg/volumeMute.svg");
+}
+#volume{
+  -webkit-appearance: none;
+  appearance: none;
+  /* position: absolute; */
+  z-index: 4;
+  height: 5px;
+  background: white;
+  width: 70px;
+  height: 4px;
+  background-image: linear-gradient(gray, gray);
+  background-size: 30% 100%;
+  background-repeat: no-repeat;
+  right: -120px;
+  top:5px;
+  border-radius: 10px;
+}
+#volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+   margin-top: -2px;
+  /* margin-left: 10px;  */
+  height: 8px;
+  width: 5px;
+  border: 0;
+  background: gray;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+/* style for the progress bar's runnable track */
+#volume::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  max-height: 5px;
+  border-radius: 30px;
 }
 
 .weather {
@@ -125,13 +258,13 @@ body {
   align-items: flex-start;
   row-gap: 5px;
   width: 180px;
-  min-height: 180px;  
+  min-height: 180px;
   text-align: left;
 }
-.city{
+.city {
   margin-bottom: 20px;
 }
-.weather-main{
+.weather-main {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
@@ -152,12 +285,12 @@ body {
   font-size: 44px;
   margin-right: 15px;
 }
-.temperature{
+.temperature {
   font-size: 32px;
 }
 .weather-description,
 .wind-speed,
-.humidity{
+.humidity {
   margin-bottom: 10px;
 }
 
@@ -167,17 +300,17 @@ body {
   padding: 5px;
   font-size: 20px;
   line-height: 24px;
-  color: #fff;  
+  color: #fff;
   border: 0;
   outline: 0;
   border-bottom: 1px solid #fff;
   background-color: transparent;
 }
 
-.city::placeholder {  
+.city::placeholder {
   font-size: 20px;
   color: #fff;
-  opacity: .6;
+  opacity: 0.6;
 }
 
 .main {
@@ -188,8 +321,9 @@ body {
   align-items: center;
   width: 100%;
   height: 40vh;
-  min-height: 260px;  
+  min-height: 260px;
   padding: 20px;
+  z-index: 0;
 }
 
 .slider-icon {
@@ -212,9 +346,9 @@ body {
 .time {
   min-height: 124px;
   margin-bottom: 10px;
-  font-family: 'Arial-MT';
+  font-family: "Arial-MT";
   font-size: 100px;
-  letter-spacing: -4px;  
+  letter-spacing: -4px;
 }
 
 .date {
@@ -234,7 +368,7 @@ body {
 }
 
 .greeting {
-  flex: 1;  
+  flex: 1;
   padding: 10px;
   text-align: right;
 }
@@ -253,7 +387,7 @@ body {
 
 .name::placeholder {
   color: #fff;
-  opacity: .6;
+  opacity: 0.6;
 }
 
 .footer {
@@ -263,13 +397,13 @@ body {
   align-items: center;
   width: 100%;
   height: 30vh;
-  min-height: 160px;  
+  min-height: 160px;
   padding: 20px;
 }
 
 .change-quote {
   margin-bottom: 30px;
-  background-image: url("../assets/svg/reload.svg");  
+  background-image: url("../assets/svg/reload.svg");
 }
 
 .quote {
@@ -283,7 +417,7 @@ body {
 @media (max-width: 768px) {
   .time {
     min-height: 80px;
-    font-size: 72px;    
+    font-size: 72px;
   }
 
   .greeting-container {

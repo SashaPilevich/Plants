@@ -7,6 +7,8 @@ import { city, weatherIcon, weatherDescription, temperature, windSpeed } from ".
 import { getWeather } from "./weather.js";
 import { getLocalStorage, setLocalStorage } from "./helpers/localStorage.js";
 import { getQuotes } from "./quotes.js";
+import { playPauseAudio } from "./audio.js";
+import { playList } from "./playList.js";
 
 export const app = () => {
   getQuotes();
