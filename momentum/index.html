@@ -21,11 +21,17 @@
     </div>
     <div class="weather">
       <input type="text" class="city" />
-      <i class="weather-icon owf"></i>
+      <span class="weather-error"></span>
+      <div class="weather-main">
+        <i class="weather-icon owf"></i>
+        <span class="temperature"></span>
+      </div>
+      
       <div class="weather-error"></div>
       <div class="description-container">
-        <span class="temperature"></span>
         <span class="weather-description"></span>
+        <span class="wind-speed"></span>
+        <span class="humidity"></span>
       </div>
       <div class="wind"></div>
       <div class="humidity"></div>
@@ -40,7 +46,7 @@
     <date class="date"></date>
     <div class="greeting-container">
       <span class="greeting"></span>
-      <input type="text" class="name" />
+      <input type="text" class="name"/>
     </div>
   </main>
   <footer class="footer">

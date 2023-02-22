@@ -15,6 +15,7 @@ export const setBg = () => {
   img.onload = () => {
     body.style.backgroundImage = `url('https://raw.githubusercontent.com/SashaPilevich/stage1-tasks/assets/images/${timeOfDay}/${randomNum}.jpg')`;
   };
+  console.log(randomNum)
 };
 setBg();
 const getSlideNext = () => {

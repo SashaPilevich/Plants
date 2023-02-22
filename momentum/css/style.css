@@ -16,7 +16,7 @@ body {
   font-size: 16px;
   color: #fff;
   text-align: center;
-  /* background: url("../assets/img/bg.jpg") center/cover, rgba(0, 0, 0, 0.5); */
+ background:  rgba(0, 0, 0, 0.5); 
   background-blend-mode: multiply;
   transition: background-image 1s ease-in-out;
 }
@@ -128,7 +128,14 @@ body {
   min-height: 180px;  
   text-align: left;
 }
-
+.city{
+  margin-bottom: 20px;
+}
+.weather-main{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
 .weather-error {
   margin-top: -10px;
 }
@@ -143,6 +150,15 @@ body {
 
 .weather-icon {
   font-size: 44px;
+  margin-right: 15px;
+}
+.temperature{
+  font-size: 32px;
+}
+.weather-description,
+.wind-speed,
+.humidity{
+  margin-bottom: 10px;
 }
 
 .city {
