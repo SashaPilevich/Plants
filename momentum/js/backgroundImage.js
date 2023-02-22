@@ -3,7 +3,7 @@ import { getRandomNum } from "./helpers/randomNum.js";
 export const body = document.body;
 const nextSlide = document.querySelector(".slide-next");
 const prevSlide = document.querySelector(".slide-prev");
-let randomNum = getRandomNum();
+let randomNum = getRandomNum(1,20);
 
 export const setBg = () => {
   let timeOfDay = getTimeOfDay();

@@ -1,14 +1,16 @@
-export const userName = document.querySelector('.name');
-const setLocalStorage = () => {
-  if(userName.value){
-    localStorage.setItem('name', userName.value);
-  }
-};
-window.addEventListener('beforeunload', setLocalStorage);
+import { getLocalStorage, setLocalStorage } from "./helpers/localStorage.js";
 
-const getLocalStorage = () => {
-  if (localStorage.getItem('name')) {
-    userName.value = localStorage.getItem('name');
+export const userName = document.querySelector('.name');
+const setNameLocalStorage = () => {
+  if(userName.value){
+    setLocalStorage('name', userName.value);
   }
 };
-window.addEventListener('load', getLocalStorage);
+window.addEventListener('beforeunload', setNameLocalStorage);
+
+const getNameLocalStorage = () => {
+  if (getLocalStorage('name')) {
+    userName.value = getLocalStorage('name');
+  }
+};
+window.addEventListener('load', getNameLocalStorage);

@@ -6,8 +6,10 @@ import { body } from "./backgroundImage.js";
 import { city, weatherIcon, weatherDescription, temperature, windSpeed } from "./weather.js";
 import { getWeather } from "./weather.js";
 import { getLocalStorage, setLocalStorage } from "./helpers/localStorage.js";
+import { getQuotes } from "./quotes.js";
 
 export const app = () => {
+  getQuotes();
   getWeather()
   const root = document.querySelector('#root');
 }
