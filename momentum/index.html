@@ -48,7 +48,7 @@
         <ul class="play-list"></ul>
       </div>
       <div class="weather">
-        <input type="text" class="city" />
+        <input type="text" class="city" placeholder = 'Enter city name...'autocomplete="off" />
         <span class="weather-error"></span>
         <div class="weather-main">
           <i class="weather-icon owf"></i>
@@ -74,14 +74,50 @@
       <date class="date"></date>
       <div class="greeting-container">
         <span class="greeting"></span>
-        <input type="text" class="name" />
+        <input type="text" class="name" placeholder="Enter your name..."/>
       </div>
     </main>
     <footer class="footer">
-      <button class="change-quote"></button>
-      <div>
+      <div class="todo-container">
+        <h3>TODO</h3>
+      </div>
+      <div class="quote-container">
+        <button class="change-quote"></button>
         <div class="quote"></div>
         <div class="author"></div>
+      </div>
+      <div class="settings">
+        <button class="settings-icon ico"></button>
+        <div class="settings-container">
+          <div class="change-language">
+            <p class="language-title"></p>
+            <div class="language-btn">
+              <button class="btn-en">EN</button>
+              <button class="btn-ru">RU</button>
+            </div>
+          </div>
+          <div class="choose-image-sourse">
+            <p class="image-source-title"></p>
+            <div class="image-source-input">
+              <label for="github">
+                <input id="github" value="github" type="radio" name="radio" checked="checked">
+                <span class="styleforradio"></span>
+                GitHub
+              </label>
+              <label for="unsplash">
+                <input id="unsplash" value="unsplash" type="radio" name="radio">
+                <span class="styleforradio"></span>
+                UnSplash
+              </label>
+              <label for="flickr">
+                <input id="flickr" value="flickr" type="radio" name="radio">
+                <span class="styleforradio"></span>
+                Flickr
+              </label>
+            </div>
+            <input class="additional-image-source"/>
+          </div>
+        </div>
       </div>
     </footer>
     <script src="js/script.js" type="module"></script>
