@@ -1,55 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="assets/favicon.ico" rel="shortcut icon" />
-  <link rel="stylesheet" href="css/owfont-regular.css" />
-  <link rel="stylesheet" href="css/style.css" />
-  <title>momentum</title>
-</head>
-<div id="root"></div>
-<body>
-  <header class="header">
-    <div class="player">
-      <div class="player-controls">
-        <button class="play-prev player-icon"></button>
-        <button class="play player-icon"></button>
-        <button class="play-next player-icon"></button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="assets/favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="css/owfont-regular.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>momentum</title>
+  </head>
+  <div id="root"></div>
+  <body>
+    <header class="header">
+      <div class="player">
+        <audio volume="0.5"></audio>
+        <div class="about-song">
+          <span class="play-title"></span>
+          <div class="play-time">
+            <span class="play-current-time">0:00</span>
+            <span>/</span>
+            <span class="play-duration-time"></span>
+          </div>
+          <div class="volume-container">
+            <button class="volume-icon volume-icon-btn"></button>
+            <input
+              type="range"
+              id="volume"
+              min="0"
+              max="100"
+              value="30"
+              step="0.1"
+            />
+          </div>
+        </div>
+        <input
+          type="range"
+          id="progress-bar"
+          min="0"
+          max="100"
+          value="0"
+          step="0.1"
+        />
+        <div class="player-controls">
+          <button class="play-prev player-icon"></button>
+          <button class="play player-icon"></button>
+          <button class="play-next player-icon"></button>
+        </div>
+        <ul class="play-list"></ul>
       </div>
-      <ul class="play-list"></ul>
-    </div>
-    <div class="weather">
-      <input type="text" class="city" />
-      <i class="weather-icon owf"></i>
-      <div class="weather-error"></div>
-      <div class="description-container">
-        <span class="temperature"></span>
-        <span class="weather-description"></span>
+      <div class="weather">
+        <input type="text" class="city" placeholder = 'Enter city name...'autocomplete="off" />
+        <span class="weather-error"></span>
+        <div class="weather-main">
+          <i class="weather-icon owf"></i>
+          <span class="temperature"></span>
+        </div>
+
+        <div class="weather-error"></div>
+        <div class="description-container">
+          <span class="weather-description"></span>
+          <span class="wind-speed"></span>
+          <span class="humidity"></span>
+        </div>
+        <div class="wind"></div>
+        <div class="humidity"></div>
       </div>
-      <div class="wind"></div>
-      <div class="humidity"></div>
-    </div>
-  </header>
-  <main class="main">
-    <div class="slider-icons">
-      <button class="slide-prev slider-icon"></button>
-      <button class="slide-next slider-icon"></button>
-    </div>
-    <time class="time"></time>
-    <date class="date"></date>
-    <div class="greeting-container">
-      <span class="greeting"></span>
-      <input type="text" class="name" />
-    </div>
-  </main>
-  <footer class="footer">
-    <button class="change-quote"></button>
-    <div>
-      <div class="quote"></div>
-      <div class="author"></div>
-    </div>
-  </footer>
-  <script src="js/script.js" type="module"></script>
-</body>
+    </header>
+    <main class="main">
+      <div class="slider-icons">
+        <button class="slide-prev slider-icon"></button>
+        <button class="slide-next slider-icon"></button>
+      </div>
+      <time class="time"></time>
+      <date class="date"></date>
+      <div class="greeting-container">
+        <span class="greeting"></span>
+        <input type="text" class="name" placeholder="Enter your name..."/>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="todo-container">
+        <h3>TODO</h3>
+      </div>
+      <div class="quote-container">
+        <button class="change-quote"></button>
+        <div class="quote"></div>
+        <div class="author"></div>
+      </div>
+      <div class="settings">
+        <button class="settings-icon ico"></button>
+        <div class="settings-container">
+          <div class="change-language">
+            <p class="language-title"></p>
+            <div class="language-btn">
+              <button class="btn-en">EN</button>
+              <button class="btn-ru">RU</button>
+            </div>
+          </div>
+          <div class="choose-image-sourse">
+            <p class="image-source-title"></p>
+            <div class="image-source-input">
+              <label for="github">
+                <input id="github" value="github" type="radio" name="radio" checked="checked">
+                <span class="styleforradio"></span>
+                GitHub
+              </label>
+              <label for="unsplash">
+                <input id="unsplash" value="unsplash" type="radio" name="radio">
+                <span class="styleforradio"></span>
+                UnSplash
+              </label>
+              <label for="flickr">
+                <input id="flickr" value="flickr" type="radio" name="radio">
+                <span class="styleforradio"></span>
+                Flickr
+              </label>
+            </div>
+            <input class="additional-image-source"/>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/script.js" type="module"></script>
+  </body>
 </html>
