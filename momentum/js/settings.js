@@ -2,6 +2,7 @@ import { showDate } from "./date.js";
 import { showGreeting } from "./greeting.js";
 import { getLocalStorage } from "./helpers/localStorage.js";
 import { getQuotes } from "./quotes.js";
+import { changeLanguageInTodo } from "./todo.js";
 import { changeLanguagePlacehoder } from "./userName.js";
 import { city, getWeather,languagePlaceholderCity } from "./weather.js";
 let language;
@@ -49,6 +50,7 @@ btnEn.addEventListener('click',() => {
   changeLanguagePlacehoder(language)
   getQuotes(language)
   appSettings(language)
+  changeLanguageInTodo(language)
 })
 btnRu.addEventListener('click',() => {
   btnRu.classList.add('active')
@@ -63,4 +65,5 @@ btnRu.addEventListener('click',() => {
   changeLanguagePlacehoder(language)
   getQuotes(language)
   appSettings(language)
+  changeLanguageInTodo(language)
 })

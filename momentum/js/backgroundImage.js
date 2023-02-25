@@ -3,57 +3,57 @@ import { getRandomNum } from "./helpers/randomNum.js";
 export const body = document.body;
 const nextSlide = document.querySelector(".slide-next");
 const prevSlide = document.querySelector(".slide-prev");
-let randomNum = getRandomNum(1,20);
+let randomNum = getRandomNum(1, 20);
+
 ///input for bkg
-export const radioGit = document.querySelector('#github');
-const radioUnsplash = document.querySelector('#unsplash');
-const radioFlickr = document.querySelector('#flickr');
-const styleforradio = document.querySelector('.styleforradio');
-const searchImage = document.querySelector('.additional-image-source')
+export const radioGit = document.querySelector("#github");
+const radioUnsplash = document.querySelector("#unsplash");
+const radioFlickr = document.querySelector("#flickr");
+const searchImage = document.querySelector(".additional-image-source");
 let currentBackground = radioGit.value;
 let additionalTag;
-export const chooseImageSource = (currentBackground,additionalTag) => {
-if(currentBackground == 'github'){
-  console.log('im github')
-  setBg()
-  
-}else if(currentBackground == 'unsplash'){
-  console.log('im unsplash')
-getBkgFromUnsplash(additionalTag)
 
-} else if(currentBackground == 'flickr'){
-  console.log('im flickr')
-  getBkgFromFlickr(additionalTag)
-  
-}
-}
-radioGit.addEventListener('change',(event) => {
+export const chooseImageSource = (currentBackground, additionalTag) => {
+  if (currentBackground == "github") {
+    console.log("im github");
+    setBg();
+  } else if (currentBackground == "unsplash") {
+    console.log("im unsplash");
+    getBkgFromUnsplash(additionalTag);
+  } else if (currentBackground == "flickr") {
+    console.log("im flickr");
+    getBkgFromFlickr(additionalTag);
+  }
+};
+radioGit.addEventListener("change", (event) => {
   currentBackground = event.target.value;
-  chooseImageSource(currentBackground)
-  searchImage.style.display = 'none'
-})
-radioUnsplash.addEventListener('change',(event) => {
-  searchImage.innerHTML = ''
+  chooseImageSource(currentBackground);
+  searchImage.style.opacity = "0";
+});
+radioUnsplash.addEventListener("change", (event) => {
+  additionalTag = ''
+  searchImage.value = ''
   currentBackground = event.target.value;
-  chooseImageSource(currentBackground,additionalTag)
-  searchImage.style.display = 'block'
-})
-radioFlickr.addEventListener('change',(event) => {
-  searchImage.innerHTML = ''
+  chooseImageSource(currentBackground, additionalTag);
+  searchImage.style.opacity = "1";
+});
+radioFlickr.addEventListener("change", (event) => {
+  additionalTag = ''
+  searchImage.value = ''
   currentBackground = event.target.value;
-  chooseImageSource(currentBackground,additionalTag)
-  searchImage.style.display = 'block'
-})
+  chooseImageSource(currentBackground, additionalTag);
+  searchImage.style.opacity = "1";
+});
 searchImage.addEventListener("keypress", setImage);
 function setImage(event) {
   if (event.code === "Enter") {
     searchImage.blur();
   }
 }
-searchImage.addEventListener('change',(event) => {
-  additionalTag = event.target.value
-  chooseImageSource(currentBackground,additionalTag)
-})
+searchImage.addEventListener("change", (event) => {
+  additionalTag = event.target.value;
+  chooseImageSource(currentBackground, additionalTag);
+});
 
 export const setBg = () => {
   let timeOfDay = getTimeOfDay();
@@ -65,32 +65,12 @@ export const setBg = () => {
   img.onload = () => {
     body.style.backgroundImage = `url('https://raw.githubusercontent.com/SashaPilevich/stage1-tasks/assets/images/${timeOfDay}/${randomNum}.jpg')`;
   };
-  console.log(randomNum)
 };
 
-const getSlideNext = () => {
-  if (randomNum < 20) {
-    ++randomNum;
-  } else {
-    randomNum = 1;
+export const getBkgFromUnsplash = async (tag = getTimeOfDay()) => {
+  if (tag == "") {
+    tag = getTimeOfDay();
   }
-  chooseImageSource(currentBackground,additionalTag)
-};
-const getSlidePrev = () => {
-  if (randomNum <= 20 && randomNum != 1) {
-    --randomNum;
-  } else {
-    randomNum = 20;
-  }
-  chooseImageSource(currentBackground,additionalTag)
-};
-nextSlide.addEventListener('click', getSlideNext);
-prevSlide.addEventListener('click', getSlidePrev);
-
-export  const getBkgFromUnsplash = async (tag=getTimeOfDay()) => {
-  if(tag == ''){
-    tag=getTimeOfDay()
-  } 
   const url = `https://api.unsplash.com/photos/random?orientation=landscape&query=${tag}&client_id=lHFy1AnWTiVRkvDHpaJeUw3XLy14iGMRKQTMEfZ9xfA`;
   const res = await fetch(url);
   const data = await res.json();
@@ -99,23 +79,40 @@ export  const getBkgFromUnsplash = async (tag=getTimeOfDay()) => {
   img.onload = () => {
     body.style.backgroundImage = `url('${data.urls.regular}')`;
   };
-  console.log(tag)
-}
-// getBkgFromUnsplash()
+  console.log(tag);
+};
 
-export  const getBkgFromFlickr = async (tag=getTimeOfDay()) => {
-  if(tag == ''){
-    tag=getTimeOfDay()
+export const getBkgFromFlickr = async (tag = getTimeOfDay()) => {
+  if (tag == "") {
+    tag = getTimeOfDay();
   }
   const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=7e949e017513c65764cf0a94decb86da&tags=${tag}&sort=relevanse&per_page=200&extras=url_h&format=json&nojsoncallback=1`;
   const res = await fetch(url);
   const data = await res.json();
   const img = new Image();
-  let num = getRandomNum(1,200)
+  let num = getRandomNum(1, 200);
   img.src = data.photos.photo[num].url_h;
   img.onload = () => {
     body.style.backgroundImage = `url('${data.photos.photo[num].url_h}')`;
   };
-  console.log(data.photos.photo[num].url_h)
-}
-// getBkgFromFlickr()
+  console.log(data)
+  console.log(tag);
+};
+const getSlideNext = () => {
+  if (randomNum < 20) {
+    ++randomNum;
+  } else {
+    randomNum = 1;
+  }
+  chooseImageSource(currentBackground, additionalTag);
+};
+const getSlidePrev = () => {
+  if (randomNum <= 20 && randomNum != 1) {
+    --randomNum;
+  } else {
+    randomNum = 20;
+  }
+  chooseImageSource(currentBackground, additionalTag);
+};
+nextSlide.addEventListener("click", getSlideNext);
+prevSlide.addEventListener("click", getSlidePrev);

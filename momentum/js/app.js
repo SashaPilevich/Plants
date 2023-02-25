@@ -16,6 +16,7 @@ import { appSettings } from "./settings.js";
 import { getBkgFromUnsplash } from "./backgroundImage.js";
 import { radioGit } from "./backgroundImage.js";
 import { chooseImageSource } from "./backgroundImage.js";
+import { btnControlTodo } from "./todo.js";
 
 let currentLanguage;
 export const app = () => {
@@ -35,7 +36,6 @@ export const app = () => {
     btnEn.classList.remove('active')
   }
   getQuotes();
-  // getWeather(city.value, currentLanguage)
   appSettings(currentLanguage)
   chooseImageSource(radioGit.value)
   const root = document.querySelector('#root');
