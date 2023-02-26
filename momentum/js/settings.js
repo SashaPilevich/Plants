@@ -8,16 +8,24 @@ import { city, getWeather, languagePlaceholderCity } from "./weather.js";
 import { time } from "./time.js";
 import { btnControlTodo } from "./todo.js";
 import { dateInApp } from "./date.js";
-const greetingContainer = document.querySelector('.greeting-container');
-const weatherContainer = document.querySelector('.weather')
-const playerContainer = document.querySelector('.player')
-const quoteContainer = document.querySelector('.quote-container')
+const greetingContainer = document.querySelector(".greeting-container");
+const weatherContainer = document.querySelector(".weather");
+const playerContainer = document.querySelector(".player");
+const quoteContainer = document.querySelector(".quote-container");
+const settingsMainContainer = document.querySelector('.settings')
 let language;
 export const settingsBtn = document.querySelector(".settings-icon");
 const settingsContainer = document.querySelector(".settings-container");
 const languageTitle = document.querySelector(".language-title");
 const imageSourceTitle = document.querySelector(".image-source-title");
-const controlElements = document.querySelector('.block-control-text')
+const controlElements = document.querySelector(".block-control-text");
+const timeText = document.querySelector(".controling-time");
+const dateText = document.querySelector(".controling-date");
+const greetingText = document.querySelector(".controling-greeting");
+const quotesText = document.querySelector(".controling-quotes");
+const weatherText = document.querySelector(".controling-weather");
+const playerText = document.querySelector(".controling-player");
+const todoText = document.querySelector(".controling-todo");
 let isClose = true;
 settingsBtn.addEventListener("click", () => {
   if (isClose) {
@@ -36,18 +44,39 @@ export const appSettings = (currentLanguage = "en") => {
     en: {
       lang: "Change language",
       imagesource: "Choose image source",
-      controlElement:"Show/hide elements"
+      controlElement: "Show/hide elements",
+      time: "Time",
+      date: "Date",
+      greeting: "Greeting",
+      weather: "Weather",
+      todo: "TODO",
+      player: "Player",
+      quotes: "Quotes",
     },
     ru: {
       lang: "Изменить язык",
       imagesource: "Выберети источник изображений",
-      controlElement: "Показать/скрыть элементы"
+      controlElement: "Показать/скрыть элементы",
+      time: "Время",
+      date: "Дата",
+      greeting: "Приветствие",
+      weather: "Погода",
+      todo: "Список дел",
+      player: "Плеер",
+      quotes: "Цитаты",
     },
-
   };
   languageTitle.textContent = translateSettings[currentLanguage].lang;
   imageSourceTitle.textContent = translateSettings[currentLanguage].imagesource;
-  controlElements.textContent = translateSettings[currentLanguage].controlElement
+  controlElements.textContent =
+    translateSettings[currentLanguage].controlElement;
+  timeText.textContent = translateSettings[currentLanguage].time;
+  dateText.textContent = translateSettings[currentLanguage].date;
+  greetingText.textContent = translateSettings[currentLanguage].greeting;
+  playerText.textContent = translateSettings[currentLanguage].player;
+  todoText.textContent = translateSettings[currentLanguage].todo;
+  quotesText.textContent = translateSettings[currentLanguage].quotes;
+  weatherText.textContent = translateSettings[currentLanguage].weather;
 };
 btnEn.addEventListener("click", () => {
   btnEn.classList.add("active");
@@ -94,171 +123,166 @@ export const controlPlayer = document.querySelector("#control-player");
 export const controlQuotes = document.querySelector("#control-quotes");
 export const controlTodo = document.querySelector("#control-todo");
 
-
 controlTime.addEventListener("change", () => {
   setLocalStorage("showTime", controlTime.checked);
-  isShowTime = controlTime.checked
+  isShowTime = controlTime.checked;
   controlShowTime();
 });
 controlDate.addEventListener("change", () => {
   setLocalStorage("showDate", controlDate.checked);
-  isShowDate = controlDate.checked
+  isShowDate = controlDate.checked;
   controlShowDate();
 });
 controlGreeting.addEventListener("change", () => {
   setLocalStorage("showGreeting", controlGreeting.checked);
-  isShowGreeting = controlGreeting.checked
+  isShowGreeting = controlGreeting.checked;
   controlShowGreeting();
 });
 controlWeather.addEventListener("change", () => {
   setLocalStorage("showWeather", controlWeather.checked);
-  isShowWeather = controlWeather.checked
+  isShowWeather = controlWeather.checked;
   controlShowWeather();
 });
 controlPlayer.addEventListener("change", () => {
   setLocalStorage("showPlayer", controlPlayer.checked);
-  isShowPlayer = controlPlayer.checked
+  isShowPlayer = controlPlayer.checked;
   controlShowPlayer();
 });
 controlQuotes.addEventListener("change", () => {
   setLocalStorage("showQuotes", controlQuotes.checked);
-  isShowQuotes = controlQuotes.checked
+  isShowQuotes = controlQuotes.checked;
   controlShowQuotes();
 });
 controlTodo.addEventListener("change", () => {
   setLocalStorage("showTodo", controlTodo.checked);
-  isShowTodo = controlTodo.checked
+  isShowTodo = controlTodo.checked;
   controlShowTodo();
 });
 
-
 export const controlShowTime = () => {
   if (isShowTime) {
-    time.classList.remove('hide')
-    time.classList.add('show')
+    time.classList.remove("hide");
+    time.classList.add("show");
   } else {
-    time.classList.remove('show')
-    time.classList.add('hide');
+    time.classList.remove("show");
+    time.classList.add("hide");
   }
-}
+};
 export const controlShowDate = () => {
   if (isShowDate) {
-    dateInApp.classList.remove('hide')
-    dateInApp.classList.add('show')
+    dateInApp.classList.remove("hide");
+    dateInApp.classList.add("show");
   } else {
-    dateInApp.classList.remove('show')
-    dateInApp.classList.add('hide');
+    dateInApp.classList.remove("show");
+    dateInApp.classList.add("hide");
   }
 };
 export const controlShowGreeting = () => {
   if (isShowGreeting) {
-    greetingContainer.classList.remove('hide')
-    greetingContainer.classList.add('show')
+    greetingContainer.classList.remove("hide");
+    greetingContainer.classList.add("show");
   } else {
-    greetingContainer.classList.remove('show')
-    greetingContainer.classList.add('hide');
+    greetingContainer.classList.remove("show");
+    greetingContainer.classList.add("hide");
   }
 };
 export const controlShowWeather = () => {
   if (isShowWeather) {
-    weatherContainer.classList.remove('hide')
-    weatherContainer.classList.add('show')
+    weatherContainer.classList.remove("hide");
+    weatherContainer.classList.add("show");
   } else {
-    weatherContainer.classList.remove('show')
-    weatherContainer.classList.add('hide');
+    weatherContainer.classList.remove("show");
+    weatherContainer.classList.add("hide");
   }
 };
 export const controlShowPlayer = () => {
   if (isShowPlayer) {
-    playerContainer.classList.remove('hide')
-    playerContainer.classList.add('show')
+    playerContainer.classList.remove("hide");
+    playerContainer.classList.add("show");
   } else {
-    playerContainer.classList.remove('show')
-    playerContainer.classList.add('hide');
+    playerContainer.classList.remove("show");
+    playerContainer.classList.add("hide");
   }
 };
 export const controlShowQuotes = () => {
   if (isShowQuotes) {
-    quoteContainer.classList.remove('hide')
-    quoteContainer.classList.add('show')
-    getQuotes()
+    quoteContainer.classList.remove("hide");
+    quoteContainer.classList.add("show");
+    getQuotes();
   } else {
-    quoteContainer.classList.remove('show')
-    quoteContainer.classList.add('hide');
+    quoteContainer.classList.remove("show");
+    quoteContainer.classList.add("hide");
   }
 };
 export const controlShowTodo = () => {
   if (isShowTodo) {
-    btnControlTodo.classList.remove('hide')
-    btnControlTodo.classList.add('show')
+    btnControlTodo.classList.remove("hide");
+    btnControlTodo.classList.add("show");
   } else {
-    btnControlTodo.classList.remove('show')
-    btnControlTodo.classList.add('hide');
+    btnControlTodo.classList.remove("show");
+    btnControlTodo.classList.add("hide");
   }
 };
 
 window.addEventListener("load", () => {
-  
   isShowTime = getLocalStorage("showTime");
   if (isShowTime == undefined) {
     setLocalStorage("showTime", true);
     isShowTime = true;
   } else {
-    isShowTime = isShowTime == 'true';
+    isShowTime = isShowTime == "true";
   }
   isShowDate = getLocalStorage("showDate");
   if (isShowDate == undefined) {
     setLocalStorage("showDate", true);
     isShowDate = true;
   } else {
-    isShowDate = isShowDate == 'true';
+    isShowDate = isShowDate == "true";
   }
   isShowGreeting = getLocalStorage("showGreeting");
   if (isShowGreeting == undefined) {
     setLocalStorage("showGreeting", true);
     isShowGreeting = true;
   } else {
-    isShowGreeting = isShowGreeting == 'true';
+    isShowGreeting = isShowGreeting == "true";
   }
   isShowWeather = getLocalStorage("showWeather");
   if (isShowWeather == undefined) {
     setLocalStorage("showWeather", true);
     isShowWeather = true;
   } else {
-    isShowWeather = isShowWeather == 'true';
+    isShowWeather = isShowWeather == "true";
   }
   isShowPlayer = getLocalStorage("showPlayer");
   if (isShowPlayer == undefined) {
     setLocalStorage("showPlayer", true);
     isShowPlayer = true;
   } else {
-    isShowPlayer = isShowPlayer == 'true';
+    isShowPlayer = isShowPlayer == "true";
   }
   isShowQuotes = getLocalStorage("showQuotes");
   if (isShowQuotes == undefined) {
     setLocalStorage("showQuotes", true);
     isShowQuotes = true;
   } else {
-    isShowQuotes = isShowQuotes == 'true';
+    isShowQuotes = isShowQuotes == "true";
   }
   isShowTodo = getLocalStorage("showTodo");
   if (isShowTodo == undefined) {
     setLocalStorage("showTodo", true);
     isShowTodo = true;
   } else {
-    isShowTodo = isShowTodo == 'true';
+    isShowTodo = isShowTodo == "true";
   }
 
+  controlShowTime();
+  controlShowDate();
+  controlShowGreeting();
+  controlShowWeather();
+  controlShowPlayer();
+  controlShowQuotes();
+  controlShowTodo();
 
-  controlShowTime()
-  controlShowDate()
-  controlShowGreeting()
-  controlShowWeather()
-  controlShowPlayer()
-  controlShowQuotes()
-  controlShowTodo()
-
-  
   controlTime.checked = isShowTime;
   controlDate.checked = isShowDate;
   controlGreeting.checked = isShowGreeting;
@@ -267,3 +291,11 @@ window.addEventListener("load", () => {
   controlQuotes.checked = isShowQuotes;
   controlTodo.checked = isShowTodo;
 });
+document.addEventListener( 'click', (e) => {
+	const withinBoundaries = e.composedPath().includes(settingsMainContainer);
+	if ( ! withinBoundaries ) {
+		settingsContainer.style.opacity = '0'; 
+    isOpen=false
+	}
+})
+

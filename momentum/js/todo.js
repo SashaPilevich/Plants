@@ -3,6 +3,7 @@ import { getLocalStorage } from "./helpers/localStorage.js";
 export const btnControlTodo = document.querySelector(".btn-control-todo");
 export const todoContainer = document.querySelector(".todo-container");
 const todoInput = document.querySelector(".todo-input");
+const todoMainContainer = document.querySelector('.todo')
 let isOpen = false;
 let isDone;
 
@@ -13,9 +14,13 @@ function generateId() {
 btnControlTodo.addEventListener("click", () => {
   if (!isOpen) {
     todoContainer.style.opacity = "1";
+    todoContainer.style.zIndex = "3";
+    btnControlTodo.style.zIndex = "4";
     isOpen = true;
   } else {
     todoContainer.style.opacity = "0";
+    todoContainer.style.zIndex = "0";
+    btnControlTodo.style.zIndex = "1";
     isOpen = false;
   }
 });
@@ -137,10 +142,11 @@ if(currentLanguage == 'en'){
   tabBtnDone.innerHTML = 'ГОТОВО'
 }
 }
-// document.addEventListener("click", (event) => {
-//   if (event.target.className != "btn-control-todo" && event.target.className != "todo-container" && isOpen == true) {
-//     todoContainer.style.opacity = "0";
-//     isOpen= false
-//   }
 
-// });
+document.addEventListener( 'click', (e) => {
+	const withinBoundaries = e.composedPath().includes(todoMainContainer);
+	if ( ! withinBoundaries ) {
+		todoContainer.style.opacity = '0'; 
+    isOpen=false
+	}
+})
