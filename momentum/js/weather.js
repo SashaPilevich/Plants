@@ -19,26 +19,26 @@ export async function getWeather(city = "Minsk", language = "en") {
       windSpeed: "Wind speed: ",
       humidity: "Humidity: ",
       speed: "m/s",
-      error: "city not found",
+      error: "City not found",
     },
     ru: {
       windSpeed: "Скорость ветра: ",
       humidity: "Влажность: ",
       speed: "м/с",
-      error: "город не найден",
+      error: "Город не найден",
     },
   };
   if (data.cod === 200) {
     weatherIcon.className = "weather-icon owf";
     weatherIcon.classList.add(`owf-${data.weather[0].id}`);
     windSpeed.textContent = `${
-      translateWeather[language].windSpeed
+    translateWeather[language].windSpeed
     }${Math.floor(data.wind.speed)} ${translateWeather[language].speed}`;
     humidity.textContent = `${translateWeather[language].humidity}${Math.floor(
       data.main.humidity
     )} %`;
     temperature.textContent = `${Math.floor(data.main.temp)}°C`;
-    weatherDescription.textContent = data.weather[0].description;
+    weatherDescription.textContent = data.weather[0].description[0].toUpperCase()+data.weather[0].description.slice(1);
     weatherError.textContent = "";
   } else {
     weatherError.textContent = `${translateWeather[language].error}`;
@@ -64,6 +64,7 @@ export function languagePlaceholderCity(lang) {
       city.value = "Minsk";
     } else {
       city.value = "Минск";
+      city.placeholder = "Введите название города"
     }
   }
 
@@ -75,7 +76,7 @@ export function languagePlaceholderCity(lang) {
 window.addEventListener("load", () => {
   let currentCity = getLocalStorage("city");
   let currentLanguage = getLocalStorage("language");
-  if (currentCity) {
+  if (currentCity ) {
     city.value = currentCity;
   } else {
     if (currentLanguage == "en") {
@@ -88,5 +89,16 @@ window.addEventListener("load", () => {
   getWeather(city.value, currentLanguage);
 });
 window.addEventListener("beforeunload", () => {
-  setLocalStorage("city", city.value);
+  let currentLanguage = getLocalStorage("language");
+  if(weatherError.textContent != 'City not found' && weatherError.textContent != 'Город не найден' ){
+    setLocalStorage("city", city.value);
+  }else {
+    if(currentLanguage == 'en'){
+      setLocalStorage("city", 'Minsk');
+    }else{
+      setLocalStorage("city", 'Минск');
+    }
+   
+  }
+    
 });

@@ -20,19 +20,9 @@
             <span>/</span>
             <span class="play-duration-time"></span>
           </div>
-          <div class="volume-container">
-            <button class="volume-icon volume-icon-btn"></button>
-            <input
-              type="range"
-              id="volume"
-              min="0"
-              max="100"
-              value="30"
-              step="0.1"
-            />
-          </div>
         </div>
-        <input
+        <div class="progress-play">
+          <input
           type="range"
           id="progress-bar"
           min="0"
@@ -40,10 +30,23 @@
           value="0"
           step="0.1"
         />
+        </div>
+        
         <div class="player-controls">
           <button class="play-prev player-icon"></button>
           <button class="play player-icon"></button>
           <button class="play-next player-icon"></button>
+        </div>
+        <div class="volume-container">
+          <button class="volume-icon volume-icon-btn"></button>
+          <input
+            type="range"
+            id="volume"
+            min="0"
+            max="100"
+            value="30"
+            step="0.1"
+          />
         </div>
         <ul class="play-list"></ul>
       </div>
@@ -54,8 +57,6 @@
           <i class="weather-icon owf"></i>
           <span class="temperature"></span>
         </div>
-
-        <div class="weather-error"></div>
         <div class="description-container">
           <span class="weather-description"></span>
           <span class="wind-speed"></span>
@@ -70,7 +71,9 @@
         <button class="slide-prev slider-icon"></button>
         <button class="slide-next slider-icon"></button>
       </div>
-      <time class="time"></time>
+      <div class="itstime">
+        <time class="time"></time>
+      </div>
       <date class="date"></date>
       <div class="greeting-container">
         <span class="greeting"></span>
@@ -78,13 +81,27 @@
       </div>
     </main>
     <footer class="footer">
+      <button class="btn-control-todo">TODO</button>
       <div class="todo-container">
-        <h3>TODO</h3>
+        <input placeholder="What are you going to do?" class="todo-input">
+        <div class="tabs">
+          <button class="tab-btn-all active">All</button>
+          <button class="tab-btn-done">Done</button>
+        </div>
+        <div class="line"></div>
+        <div class="tab-content">
+          <div class="tab-content-all"></div>
+        </div>
       </div>
       <div class="quote-container">
         <button class="change-quote"></button>
         <div class="quote"></div>
         <div class="author"></div>
+        <div class="footer-info">
+          <p class="year">2023</p>
+          <a href="https://github.com/SashaPilevich" rel="noopener" target="_blank" class="mygit">GitHub</a>
+          <a class="rss" href="https://rs.school/js/" rel="noopener" target="_blank"><i class="rss-ico"></i></a>
+        </div>
       </div>
       <div class="settings">
         <button class="settings-icon ico"></button>
@@ -116,6 +133,47 @@
               </label>
             </div>
             <input class="additional-image-source"/>
+          </div>
+          <div class="block-control">
+            <p class="block-control-text">
+            </p>
+            <div class="block-control-input">
+              <label class="control" for="control-time">
+                <input id="control-time" value="control-time" type="checkbox" name="check">
+                <span class="styleforcheckbox"></span>
+                Time
+              </label>
+              <label class="control" for="control-date">
+                <input id="control-date" value="control-date" type="checkbox" name="check">
+                <span class="styleforcheckbox"></span>
+                Date
+              </label>
+              <label class="control" for="control-greeting">
+                <input id="control-greeting" value="control-greeting" type="checkbox" name="check">
+                <span class="styleforcheckbox"></span>
+                Greeting
+              </label>
+              <label class="control" for="control-quotes">
+                <input id="control-quotes" value="control-quotes" type="checkbox" name="check">
+                <span class="styleforcheckbox"></span>
+                Quotes
+              </label>
+              <label class="control" for="control-weather">
+                <input id="control-weather" value="control-weather" type="checkbox" name="check">
+                <span class="styleforcheckbox"></span>
+                Weather
+              </label>
+              <label class="control" for="control-player">
+                <input id="control-player" value="control-player" type="checkbox" name="check">
+                <span class="styleforcheckbox"></span>
+                Player
+              </label>
+              <label class="control" for="control-todo">
+                <input id="control-todo" value="control-todo" type="checkbox" name="check">
+                <span class="styleforcheckbox"></span>
+                TODO
+              </label>
+            </div>
           </div>
         </div>
       </div>
