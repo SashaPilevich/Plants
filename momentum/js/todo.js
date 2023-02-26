@@ -1,7 +1,7 @@
 import { getLocalStorage } from "./helpers/localStorage.js";
 
 export const btnControlTodo = document.querySelector(".btn-control-todo");
-const todoContainer = document.querySelector(".todo-container");
+export const todoContainer = document.querySelector(".todo-container");
 const todoInput = document.querySelector(".todo-input");
 let isOpen = false;
 let isDone;
@@ -137,10 +137,10 @@ if(currentLanguage == 'en'){
   tabBtnDone.innerHTML = 'ГОТОВО'
 }
 }
-document.addEventListener("click", (event) => {
-  if (event.target.className != "btn-control-todo" && isOpen == true) {
-    todoContainer.style.opacity = "0";
-    isOpen= false
-  }
+// document.addEventListener("click", (event) => {
+//   if (event.target.className != "btn-control-todo" && event.target.className != "todo-container" && isOpen == true) {
+//     todoContainer.style.opacity = "0";
+//     isOpen= false
+//   }
 
-});
+// });

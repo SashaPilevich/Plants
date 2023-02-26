@@ -1,7 +1,6 @@
 import { getLocalStorage } from "./helpers/localStorage.js";
 
 export const dateInApp = document.querySelector('.date');
-// let currentLanguage;
 export const showDate = (currentLanguage='en') => {
   const date = new Date();
   const options = {weekday: 'long',day:'numeric', month:'long'}

@@ -1,7 +1,7 @@
 import { showDate } from "./date.js";
 import { showGreeting } from "./greeting.js";
 export const time = document.querySelector('.time');
-const showTime = () => {
+export const showTime = () => {
   const date  = new Date();
   const currentTime = date.toLocaleTimeString();
   time.textContent = currentTime;

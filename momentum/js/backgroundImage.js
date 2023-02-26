@@ -5,7 +5,6 @@ const nextSlide = document.querySelector(".slide-next");
 const prevSlide = document.querySelector(".slide-prev");
 let randomNum = getRandomNum(1, 20);
 
-///input for bkg
 export const radioGit = document.querySelector("#github");
 const radioUnsplash = document.querySelector("#unsplash");
 const radioFlickr = document.querySelector("#flickr");
@@ -15,13 +14,10 @@ let additionalTag;
 
 export const chooseImageSource = (currentBackground, additionalTag) => {
   if (currentBackground == "github") {
-    console.log("im github");
     setBg();
   } else if (currentBackground == "unsplash") {
-    console.log("im unsplash");
     getBkgFromUnsplash(additionalTag);
   } else if (currentBackground == "flickr") {
-    console.log("im flickr");
     getBkgFromFlickr(additionalTag);
   }
 };
@@ -79,7 +75,6 @@ export const getBkgFromUnsplash = async (tag = getTimeOfDay()) => {
   img.onload = () => {
     body.style.backgroundImage = `url('${data.urls.regular}')`;
   };
-  console.log(tag);
 };
 
 export const getBkgFromFlickr = async (tag = getTimeOfDay()) => {
@@ -95,8 +90,6 @@ export const getBkgFromFlickr = async (tag = getTimeOfDay()) => {
   img.onload = () => {
     body.style.backgroundImage = `url('${data.photos.photo[num].url_h}')`;
   };
-  console.log(data)
-  console.log(tag);
 };
 const getSlideNext = () => {
   if (randomNum < 20) {
