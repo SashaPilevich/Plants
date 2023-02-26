@@ -427,7 +427,7 @@ body {
   align-items: flex-start;
   padding: 15px;
   opacity: 0;
-  background: rgba(36, 35, 35, 0.7);
+  background:rgba(60, 60, 60, 0.8);
   width: 300px;
   height: 350px;
   transition: all 0.4s;
@@ -546,10 +546,15 @@ label input {
   opacity: 1;
   transition: all 0.3s ease-in-out;
 }
+.todo {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+}
 .btn-control-todo {
   position: absolute;
-  left: 30px;
-  bottom: 50px;
+  left: 0px;
+  bottom: 0px;
   width: 100px;
   height: 50px;
   background-color: transparent;
@@ -558,7 +563,7 @@ label input {
   font-weight: 700;
   font-size: 20px;
   color:#bcb7b7;
-  z-index: 1;
+  z-index: 2;
 }
 .btn-control-todo:hover{
   transform: scale(1.1);
@@ -571,14 +576,14 @@ label input {
   align-items: flex-start;
   padding: 10px;
   opacity: 0;
-  background: rgba(36, 35, 35, 0.7);
+  background: rgba(60, 60, 60, 0.8);
   width: 300px;
   height: 350px;
   transition: all 0.4s;
   position: absolute;
-  bottom: 35px;
-  left: 35px;
-  z-index: 0;
+  bottom: 0px;
+  left: 0px;
+  z-index: 1;
   border-radius: 10px;
   padding: 20px;
 }
@@ -644,6 +649,9 @@ color: goldenrod;
   background: transparent;
   position: relative;
   margin-right: 15px;
+}
+.styleforcheckbox{
+  margin-right: 5px;
 }
 [type="checkbox"]:checked + .todo-span-done:before ,
 [type="checkbox"]:checked + .styleforcheckbox:before {
