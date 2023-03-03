@@ -1,0 +1,72 @@
+[
+  {
+    "en": {
+      "text": "The best dreams happen when you’re awake.",
+      "author": "Cherie Gilderbloom"
+    },
+    "ru": { "text": "Лучшие сны случаются, когда ты бодрствуешь.", "author": "Чери Гелдерблом" }
+  },
+  {
+    "en": {
+      "text": "Fall seven times and stand up eight.",
+      "author": "Japanese Proverb"
+    },
+    "ru": { "text": "Упади семь раз и встань восемь.", "author": "Японская пословица" }
+  },
+  {
+    "en": {
+      "text": "We do not remember days, we remember moments.",
+      "author": "Cesare Pavese"
+    },
+    "ru": { "text": "Мы не помним дней, мы помним мгновения.", "author": "Чезаре Павезе" }
+  },
+  {
+    "en": {
+      "text": "Our  life  is  what  our  thoughts  make  it.",
+      "author": "M. Aurelius"
+    },
+    "ru": { "text": "Наша жизнь такова, какой ее делают наши мысли.", "author": "М. Аурелиус" }
+  },
+  {
+    "en": {
+      "text": "Don't worry if something doesn't work. If everything worked, you would have been fired.",
+      "author": "Mosher’s Law of Software Engineering"
+    },
+    "ru": { "text": "Не волнуйтесь, если что-то не сработает. Если бы все сработало, вас бы уволили.", "author": "Закон Мошера о разработке программного обеспечения" }
+  },
+  {
+    "en": {
+      "text": "People who think they hate computers actually hate bad programmers.",
+      "author": "Larry Niven"
+    },
+    "ru": { "text": "Люди, которые думают, что ненавидят компьютеры, на самом деле ненавидят плохих программистов.", "author": "Ларри Нивен" }
+  },
+  {
+    "en": {
+      "text": "If you give a person a program, you will occupy him for one day. If you teach a person to program, you will occupy him for life.",
+      "author": "Waseem Latif"
+    },
+    "ru": { "text": "Если вы дадите человеку программу, вы займете его на один день. Если вы научите человека программировать, вы займете его на всю жизнь.", "author": "Васим Латиф" }
+  },
+  {
+    "en": {
+      "text": "Sometimes the best programs are created on a piece of paper. Programming them is a secondary thing.",
+      "author": "Max Kanat-Alexander"
+    },
+    "ru": { "text": "Иногда лучшие программы создаются на листе бумаги. Программирование их - дело второстепенное.", "author": "Макс Канат-Александр" }
+  },
+  {
+    "en": {
+      "text": "Programming is the splitting of something big and impossible into something small and quite real.",
+      "author": "Jazzwant"
+    },
+    "ru": { "text": "Программирование - это разделение чего-то большого и невозможного на что-то маленькое и вполне реальное.", "author": "Джазуонт" }
+  },
+  {
+    "en": {
+      "text": "For every complex problem, there is a solution that is quick, simple and wrong.",
+      "author": "H. L. Mencken"
+    },
+    "ru": { "text": "Для каждой сложной проблемы есть быстрое, простое и неправильное решение.", "author": "Х. Л. Менкен" }
+  }
+]
